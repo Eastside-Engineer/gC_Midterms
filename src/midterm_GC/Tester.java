@@ -6,6 +6,7 @@ public class Tester {
 		// TODO Auto-generated method stub
 		System.out.println("We are Super Cool Awesome!");
 		System.out.println("POS stands for what again.");
+		System.out.println("POS Stands for point of sale!!!!!!!!~*~");
 	}
 
 }
