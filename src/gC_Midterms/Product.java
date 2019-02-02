@@ -1,6 +1,6 @@
 package gC_Midterms;
 
-public abstract class Product {
+public class Product {
 
 	private String productName;
 	private double productPrice;
