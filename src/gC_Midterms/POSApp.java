@@ -41,14 +41,16 @@ public class POSApp {
 
 	public static List<Product> readFile() throws IOException {
 		List<String> books = Files.readAllLines(filePath);
+		
 		List<Product> products = new ArrayList<>();
 
 		for (String thisBook : books) {
-			String[] parts = books.split(",");
-			Product p = new Product(parts[0], Double.parseDouble(parts[1]), parts[2], parts[3]);
+			String[] parts = thisBook.split(",");
+			Product p = new Product(parts[0], Double.parseDouble(parts[1]));//, parts[2], parts[3]);
+			products.add(p);
 		}
 
-		System.out.println("\nPlease type the item you wud like to purchase");
+		return products;
 
 	}
 
