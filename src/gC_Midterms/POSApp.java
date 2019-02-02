@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.List;
 
 public class POSApp {
@@ -26,10 +27,11 @@ public class POSApp {
 	protected static void getPrompt() throws IOException {
 
 		System.out.println("Welcome to the Hotel California\n");
-
-		List<String> books = Files.readAllLines(filePath);
 // cycle through products and print them on lines
-
+		List<String> books = Files.readAllLines(filePath);
+// creating a list of product objects called "products" and setting it equal to an array list separated b ycom
+		List<Product> products = new ArrayList<>();
+		
 		for (String thisBook : books) {
 			System.out.println(thisBook);
 
