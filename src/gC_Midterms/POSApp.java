@@ -7,7 +7,6 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
-
 public class POSApp {
 
 	private static Path filePath = Paths.get("inventory.txt");
@@ -22,6 +21,7 @@ public class POSApp {
 		getPrompt();
 
 	}
+// END MAIN METHOD
 
 // might move this to product util class later
 
@@ -30,12 +30,22 @@ public class POSApp {
 		System.out.println("Welcome to the Hotel California\n");
 // cycle through products and print them on lines
 		List<String> books = Files.readAllLines(filePath);
-// creating a list of product objects called "products" and setting it equal to an array list separated b ycom
-		List<Product> products = new ArrayList<>();
 
 		for (String thisBook : books) {
 			System.out.println(thisBook);
 
+		}
+	}
+
+// creating a list of product objects called "products" and setting it equal to an array list separated b ycom
+
+	public static List<Product> readFile() throws IOException {
+		List<String> books = Files.readAllLines(filePath);
+		List<Product> products = new ArrayList<>();
+
+		for (String thisBook : books) {
+			String[] parts = books.split(",");
+			Product p = new Product(parts[0], Double.parseDouble(parts[1]), parts[2], parts[3]);
 		}
 
 		System.out.println("\nPlease type the item you wud like to purchase");
