@@ -14,8 +14,9 @@ public class POSApp {
 
 	public static void main(String[] args) throws IOException {
 
+// check for file existence for it is important
+		checkFile(filePath);
 // methods that prints inventory
-
 		getPrompt();
 
 	}
@@ -24,14 +25,23 @@ public class POSApp {
 
 	protected static void getPrompt() throws IOException {
 
-// System.out.println("test");
+		System.out.println("Welcome to the Hotel California\n");
 
 		List<String> books = Files.readAllLines(filePath);
 // cycle through products and print them on lines
+
 		for (String thisBook : books) {
 			System.out.println(thisBook);
 
 		}
+	
+		System.out.println("\nPlease type the item you wud like to purchase");
 
+	}
+
+	public static void checkFile(Path filePath) throws IOException {
+		if (Files.notExists(filePath)) {
+			Files.createFile(filePath);
+		}
 	}
 }

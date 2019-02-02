@@ -19,11 +19,7 @@ public class ProductUtil {
 		return books;
 	}
 
-	private static void checkForFile(Path filePath) throws IOException {
-		if (Files.notExists(filePath)) {
-			Files.createFile(filePath);
-		}
-	}
+
 }
 //Change Log:
 //13:54 PM 2/2/2019 - Removed ProductUtil "extends Product"
