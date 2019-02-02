@@ -12,7 +12,7 @@ public class ProductUtil {
 	private static Path filePath = Paths.get("inventory.txt");
 
 	// private or protected????
-	private static List<String> getPrompt() throws IOException {
+	static List<String> getPrompt() throws IOException {
 
 		List<String> books = Files.readAllLines(filePath);
 
