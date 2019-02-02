@@ -7,6 +7,7 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class POSApp {
 
 	private static Path filePath = Paths.get("inventory.txt");
@@ -31,12 +32,12 @@ public class POSApp {
 		List<String> books = Files.readAllLines(filePath);
 // creating a list of product objects called "products" and setting it equal to an array list separated b ycom
 		List<Product> products = new ArrayList<>();
-		
+
 		for (String thisBook : books) {
 			System.out.println(thisBook);
 
 		}
-	
+
 		System.out.println("\nPlease type the item you wud like to purchase");
 
 	}
