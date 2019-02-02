@@ -7,7 +7,7 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
-public class POSApp extends Product {
+public class POSApp {
 
 	private static Path filePath = Paths.get("inventory.txt");
 
@@ -18,7 +18,16 @@ public class POSApp extends Product {
 // check for file existence for it is important
 		checkFile(filePath);
 // methods that prints inventory
-		getPrompt();
+	//	getPrompt();
+		for (Product p: readFile()) {
+			System.out.println(p);
+		}
+		// test printing 1 product
+
+		readFile();
+		
+		
+		
 
 	}
 // END MAIN METHOD
