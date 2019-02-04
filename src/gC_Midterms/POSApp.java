@@ -16,6 +16,11 @@ public class POSApp {
 
 	public static void main(String[] args) throws IOException {
 
+//Creating variables to hold items selected for cart
+		double subTotal = 0;
+		double grandTotal;
+		final double salesTax = 1.06;
+
 // check for file existence for it is important
 		checkFile(filePath);
 // methods that prints inventory
@@ -42,9 +47,13 @@ public class POSApp {
 		//conditional logic to validate user input
 		String userCont = Validator.getStringMatchingRegex(scnr, "(y/n): ", "[yYnN]");
 		if (userCont.equalsIgnoreCase("y")) {
-			System.out.println("How many of " + toyList.get(userChoice-1).getName() + " would you like to add?: ");
+			 double userQuantity = Validator.getDouble(scnr, "How many of " + toyList.get(userChoice-1).getName() + " would you like to add?:", 0, 500);
+			 System.out.println(userQuantity);	
+			 subTotal += userQuantity*toyList.get(userChoice-1).getPrice();
+			 System.out.println(subTotal);
 		}else if (userCont.equalsIgnoreCase("n")) {
 			System.out.println(Validator.getStringMatchingRegex(scnr, "Would you like to look for another toy? (y/n): ", "[yYnN]"));
+	
 		}else {
 //			System.out.println(Validator.getStringMatchingRegex(scnr, "Display menu, Press 'm'", "[mM]"));
 //			System.out.println();
