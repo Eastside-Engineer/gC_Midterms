@@ -37,7 +37,8 @@ public class POSApp {
 // begin user input for adding items to SHOPPING CART
 		Scanner scnr = new Scanner(System.in);
 		int number = ProductUtil.getProductNum(scnr, "Enter a product number: ", 1, toyList.size());
-		System.out.println("Do you want to add " + toyList.get(number-1).getCategory() + ", " + toyList.get(number-1).getName() );
+		System.out.println("Do you want to add " + toyList.get(number-1).getCategory() + ", " + toyList.get(number-1).getName() + " to your cart?" );
+		
 		//int userInput = scnr.nextInt();
 
 	} // END MAIN METHOD
