@@ -36,9 +36,20 @@ public class POSApp {
 		}
 // begin user input for adding items to SHOPPING CART
 		Scanner scnr = new Scanner(System.in);
-		int number = ProductUtil.getProductNum(scnr, "Enter a product number: ", 1, toyList.size());
-		System.out.println("Do you want to add " + toyList.get(number-1).getCategory() + ", " + toyList.get(number-1).getName() + " to your cart?" );
-		
+		int userChoice = ProductUtil.getProductNum(scnr, "Enter a product number: ", 1, toyList.size());
+		System.out.println("Do you want to add " + toyList.get(userChoice-1).getCategory() + ", " + toyList.get(userChoice-1).getName() + " to your cart?" );
+//		System.out.println("(y/n); ");
+		//conditional logic to validate user input
+		String userCont = Validator.getStringMatchingRegex(scnr, "(y/n): ", "[yYnN]");
+		if (userCont.equalsIgnoreCase("y")) {
+			System.out.println("How many of " + toyList.get(userChoice-1).getName() + " would you like to add?: ");
+		}else if (userCont.equalsIgnoreCase("n")) {
+			System.out.println(Validator.getStringMatchingRegex(scnr, "Would you like to look for another toy? (y/n): ", "[yYnN]"));
+		}else {
+//			System.out.println(Validator.getStringMatchingRegex(scnr, "Display menu, Press 'm'", "[mM]"));
+//			System.out.println();
+
+		}
 		//int userInput = scnr.nextInt();
 
 	} // END MAIN METHOD
