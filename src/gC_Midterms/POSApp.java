@@ -6,6 +6,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class POSApp {
 
@@ -18,19 +19,14 @@ public class POSApp {
 // check for file existence for it is important
 		checkFile(filePath);
 // methods that prints inventory
-		// getPrompt();
 
-		// for (Toy p : readFile()) {
-		// System.out.println(Toy.getPrice());
-		// }
-		// test printing 1 product
 		List<Toy> toyList = readFile();
 
 		for (int i = 0; i < toyList.size(); i++) {
-			//Trying to print the index of the menu.
-		//	System.out.printf("%-9s", "\n" + toyList.);
-		
-			System.out.print(i+1+". "); // using the incrementor +1 to denote index AKA product nmber for user input
+			// Trying to print the index of the menu.
+			// System.out.printf("%-9s", "\n" + toyList.);
+
+			System.out.print(i + 1 + ". "); // using the incrementor +1 to denote index AKA product nmber for user input
 			System.out.println(toyList.get(i).getName());
 			System.out.printf("%-10s", "$" + toyList.get(i).getPrice());
 			System.out.printf("%-10s \t", toyList.get(i).getCategory());
@@ -38,8 +34,13 @@ public class POSApp {
 			System.out.println("\n");
 
 		}
-	}
-// END MAIN METHOD
+// begin user input for adding items to SHOPPING CART
+		Scanner scnr = new Scanner(System.in);
+		int number = ProductUtil.getProductNum(scnr, "Enter a product number: ", 1, toyList.size());
+		System.out.println("Do you want to add " + toyList.get(number-1).getCategory() + ", " + toyList.get(number-1).getName() );
+		//int userInput = scnr.nextInt();
+
+	} // END MAIN METHOD
 
 // might move this to product util class later
 

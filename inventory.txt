@@ -1,7 +1,7 @@
-GoldenEye 007,79.99,N64,des1
-Mario Kart 64,64.99,N64,des2
-Southpark Chef's Luv Shack,64.99,N64,des3
-Tony Hawk Pro Skater,79.99,N64,des4
+GoldenEye 007,79.99,N64,A first person shooter featuring James Bond, licensed to kill. 
+Mario Kart 64,64.99,N64,Silly family friendly race-battle game. 
+Southpark Chef's Luv Shack,64.99,N64,Southpark's best cook is ready to make chocolate salty balls.
+Tony Hawk Pro Skater,79.99,N64,Don't fall or get injured! 
 Bazooka,49.88,NERF,des5
 Crossbow,39.97,NERF,des6
 Sniper,34.88,NERF,des7
