@@ -48,12 +48,13 @@ public class POSApp {
 		String userCont = Validator.getStringMatchingRegex(scnr, "(y/n): ", "[yYnN]");
 		if (userCont.equalsIgnoreCase("y")) {
 			 double userQuantity = Validator.getDouble(scnr, "How many of " + toyList.get(userChoice-1).getName() + " would you like to add?:", 0, 500);
-			 System.out.println(userQuantity);	
+			 System.out.println((int) userQuantity +" of "+ toyList.get(userChoice-1).getName()+" have been added to the cart.");	
+		//Adding userQuantity times the price to the subTotal	
 			 subTotal += userQuantity*toyList.get(userChoice-1).getPrice();
-			 System.out.println(subTotal);
+			 System.out.printf("Your running total is: $" +subTotal);
 		}else if (userCont.equalsIgnoreCase("n")) {
 			System.out.println(Validator.getStringMatchingRegex(scnr, "Would you like to look for another toy? (y/n): ", "[yYnN]"));
-	
+			
 		}else {
 //			System.out.println(Validator.getStringMatchingRegex(scnr, "Display menu, Press 'm'", "[mM]"));
 //			System.out.println();
