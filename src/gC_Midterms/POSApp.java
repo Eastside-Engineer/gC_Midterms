@@ -62,7 +62,7 @@ public class POSApp {
 				if (userCont.equalsIgnoreCase("n")){
 					break;
 				}
-//			 grandTotal += subTotal*salesTax;
+
 
 			} else if (userCont.equalsIgnoreCase("n")) {
 				System.out.println(Validator.getStringMatchingRegex(scnr,
@@ -88,8 +88,14 @@ public class POSApp {
 		// int userInput = scnr.nextInt();
 		System.out.println("Thanks for shopping.");
 		System.out.println("\n");
-		System.out.print(toyCartNum.toString() + ", " + toyCart.toString() + ", for a total of ");
-		System.out.printf("$%-9.2f", subTotal);
+		
+// This loop is for an invoice. It prints out the items ordered and their price.
+		for(int i = 0; i < toyCart.size(); i++) {
+			System.out.println(toyCartNum.get(i)+ " "+ toyCart.get(i)+" "+ toyCartPrice.get(i));
+		}
+		//System.out.print(toyCartNum.toString() + ", " + toyCart.toString() + ", for a total of ");
+		//System.out.printf("$%-9.2f", subTotal);
+		System.out.println("\nYour grand total is: "+(grandTotal += subTotal*salesTax));
 
 	} // END MAIN METHOD
 
