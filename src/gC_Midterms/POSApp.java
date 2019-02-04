@@ -24,6 +24,7 @@ public class POSApp {
 		List<String> toyCart = new ArrayList<String>();
 		List<Double> toyCartPrice = new ArrayList<Double>();
 		List<Double> toyCartNum = new ArrayList<Double>();
+		Scanner scnr = new Scanner(System.in);
 
 // check for file existence for it is important
 		ProductUtil.checkFile(filePath);
@@ -33,7 +34,7 @@ public class POSApp {
 		while (run == true) {
 			ProductUtil.getPrompt();
 // begin user input for adding items to SHOPPING CART
-			Scanner scnr = new Scanner(System.in);
+		
 			int userChoice = ProductUtil.getProductNum(scnr, "Enter a product number: ", 1, toyList.size());
 			System.out.println("Do you want to add " + toyList.get(userChoice - 1).getCategory() + ", "
 					+ toyList.get(userChoice - 1).getName() + " to your cart?");
@@ -83,12 +84,23 @@ public class POSApp {
 //This is where we ask for payment type.
 		System.out.println("How would you like to pay? ");
 		
+		int paymentChoice = ProductUtil.getProductNum(scnr, "Enter 1 for Cash, 2 for Check, 3 for Credit Card: ", 1, 3);
+			if(paymentChoice == 1) {
+				//cash validation (easy)
+				
+			}else if(paymentChoice == 2) {
+				//Check validation
+			}else if(paymentChoice == 3) {
+				//Credit Card Validation
+			}
+		
+		
 		System.out.print("Your grand total is: $");
 		System.out.printf("%-9.2f", (grandTotal += subTotal * salesTax));
 		System.out.println();
 
 		
-		
+				
 // This loop is for an invoice. It prints out the items ordered and their price.
 		for (int i = 0; i < toyCart.size(); i++) {
 			System.out.println(toyCartNum.get(i) + " " + toyCart.get(i) + " " + toyCartPrice.get(i));
