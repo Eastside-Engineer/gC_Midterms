@@ -30,9 +30,9 @@ public class POSApp {
 
 		
 			 System.out.println(toyList.get(i).getName());
-			 System.out.printf("%-10s \t", toyList.get(i).getPrice());
+			 System.out.printf("%-10s" ,"$"+ toyList.get(i).getPrice());
 			System.out.printf("%-10s \t", toyList.get(i).getCategory());
-			 System.out.printf("%-9s", "$" + toyList.get(i).getDescription());
+			 System.out.printf("%-9s", "\n" + toyList.get(i).getDescription());
 			 System.out.println("\n");
 
 		}
