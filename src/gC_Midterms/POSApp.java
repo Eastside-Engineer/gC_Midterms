@@ -27,13 +27,13 @@ public class POSApp {
 		List<Toy> toyList = readFile();
 
 		for (int i = 0; i < toyList.size(); i++) {
-
-		
-			 System.out.println(toyList.get(i).getName());
-			 System.out.printf("%-10s" ,"$"+ toyList.get(i).getPrice());
+			
+		//	System.out.printf("%-9s", "\n" + toyList.);
+			System.out.println(toyList.get(i).getName());
+			System.out.printf("%-10s", "$" + toyList.get(i).getPrice());
 			System.out.printf("%-10s \t", toyList.get(i).getCategory());
-			 System.out.printf("%-9s", "\n" + toyList.get(i).getDescription());
-			 System.out.println("\n");
+			System.out.printf("%-9s", "\n" + toyList.get(i).getDescription());
+			System.out.println("\n");
 
 		}
 	}
