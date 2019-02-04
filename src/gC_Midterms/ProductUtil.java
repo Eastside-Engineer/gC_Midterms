@@ -35,6 +35,26 @@ public class ProductUtil {
 			return getProductNum(scnr, prompt);
 		}
 	}
+	
+	public static double getQuantityDouble(Scanner scnr, String prompt, double min, double max) {
+		boolean isValid = false;
+		double number;
+		do {
+			number = Validator.getDouble(scnr, prompt);
+
+			if (number < min) {
+				isValid = false;
+				System.out.println("The number must be at least " + min);
+			} else if (number > max) {
+				isValid = false;
+				System.out.println("The number must not be larger than " + max);
+			} else {
+				isValid = true;
+			}
+
+		} while (!isValid);
+		return number;
+	}
 
 	public static int getProductNum(Scanner scnr, String prompt, int min, int max) {
 		boolean isValid = false;
@@ -54,6 +74,23 @@ public class ProductUtil {
 
 		} while (!isValid);
 		return number;
+	}
+	
+	public static String getUserCont(Scanner scnr, String prompt, String regex) {
+		boolean isValid = false;
+		String input;
+		do {
+			input = Validator.getString(scnr, prompt);
+
+			if (input.matches(regex)) {
+				isValid = true;
+			} else {
+				System.out.println("Input must match the appropriate format.");
+				isValid = false;
+			}
+
+		} while (!isValid);
+		return input;
 	}
 }
 

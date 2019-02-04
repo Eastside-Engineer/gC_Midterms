@@ -39,11 +39,11 @@ public class POSApp {
 					+ toyList.get(userChoice - 1).getName() + " to your cart?");
 //		System.out.println("(y/n); ");
 			// conditional logic to validate user input
-			String userCont = Validator.getStringMatchingRegex(scnr, "(y/n): ", "[yYnN]");
+			String userCont = ProductUtil.getUserCont(scnr, "(y/n): ", "[yYnN]");
 
 			if (userCont.equalsIgnoreCase("y")) {
 
-				double userQuantity = Validator.getDouble(scnr,
+				double userQuantity = ProductUtil.getQuantityDouble(scnr,
 						"How many of " + toyList.get(userChoice - 1).getName() + " would you like to add?:", 0, 500);
 				System.out.println((int) userQuantity + " of " + toyList.get(userChoice - 1).getName()
 						+ " have been added to the cart.");
@@ -57,7 +57,7 @@ public class POSApp {
 				
 				// give user an option to check out after item is added 
 				System.out.println("Would you like to continue shopping?");
-				userCont = Validator.getStringMatchingRegex(scnr, "(y/n): ", "[yYnN]");
+				userCont = ProductUtil.getUserCont(scnr, "(y/n): ", "[yYnN]");
 				
 				if (userCont.equalsIgnoreCase("n")){
 					break;
@@ -65,7 +65,7 @@ public class POSApp {
 
 
 			} else if (userCont.equalsIgnoreCase("n")) {
-				System.out.println(Validator.getStringMatchingRegex(scnr,
+				System.out.println(ProductUtil.getUserCont(scnr,
 						"Would you like to look for another toy? (y/n): ", "[yYnN]"));
 
 				if (userCont.equalsIgnoreCase("n")) {
@@ -88,11 +88,14 @@ public class POSApp {
 		// int userInput = scnr.nextInt();
 		System.out.println("Thanks for shopping.");
 		System.out.println("\n");
-		
+//This is where we ask for payment type.
+		System.out.println("How would you like to pay? ");
 // This loop is for an invoice. It prints out the items ordered and their price.
 		for(int i = 0; i < toyCart.size(); i++) {
 			System.out.println(toyCartNum.get(i)+ " "+ toyCart.get(i)+" "+ toyCartPrice.get(i));
 		}
+		
+		
 		//System.out.print(toyCartNum.toString() + ", " + toyCart.toString() + ", for a total of ");
 		//System.out.printf("$%-9.2f", subTotal);
 		System.out.println("\nYour grand total is: "+(grandTotal += subTotal*salesTax));
