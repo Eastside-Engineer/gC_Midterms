@@ -20,11 +20,22 @@ public class POSApp {
 // methods that prints inventory
 		// getPrompt();
 
-		for (Toy p : readFile()) {
-			System.out.println(p);
-		}
+		// for (Toy p : readFile()) {
+		// System.out.println(Toy.getPrice());
+		// }
 		// test printing 1 product
+		List<Toy> toyList = readFile();
 
+		for (int i = 0; i < toyList.size(); i++) {
+
+		
+			 System.out.println(toyList.get(i).getName());
+			 System.out.printf("%-10s \t", toyList.get(i).getPrice());
+			System.out.printf("%-10s \t", toyList.get(i).getCategory());
+			 System.out.printf("%-9s", "$" + toyList.get(i).getDescription());
+			 System.out.println("\n");
+
+		}
 	}
 // END MAIN METHOD
 
@@ -32,7 +43,7 @@ public class POSApp {
 
 	protected static void getPrompt() throws IOException {
 
-		System.out.println("Welcome to the Hotel California\n");
+		System.out.println("Welcome to Toys R' Us. The most profitable, long lasting Toy store in the world.\n");
 // cycle through products and print them on lines
 		List<String> toyInventory = Files.readAllLines(filePath);
 

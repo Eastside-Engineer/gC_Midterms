@@ -1,4 +1,4 @@
-dpackage gC_Midterms;
+package gC_Midterms;
 
 import java.io.IOException;
 import java.nio.file.Files;
