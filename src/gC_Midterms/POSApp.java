@@ -71,6 +71,9 @@ public class POSApp {
 				if (userCont.equalsIgnoreCase("n")) {
 					break;
 				}
+				if (userCont.equalsIgnoreCase("y")) {
+					continue;
+				}
 
 			} else {
 
