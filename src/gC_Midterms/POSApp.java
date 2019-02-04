@@ -20,6 +20,9 @@ public class POSApp {
 		double subTotal = 0;
 		double grandTotal = 0;
 		final double salesTax = 1.06;
+		List<String> toyCart = new ArrayList<String>();
+		List<Double> toyCartPrice = new ArrayList<Double>();
+		List<Double> toyCartNum = new ArrayList<Double>();
 
 // check for file existence for it is important
 		checkFile(filePath);
@@ -45,6 +48,11 @@ public class POSApp {
 			subTotal += userQuantity * toyList.get(userChoice - 1).getPrice();
 			System.out.println("Your Subtotal is:");
 			System.out.printf("$%-9.2f", subTotal);
+			
+			//We are storing the user input inside of para lol arrays. Like a boss.
+			toyCart.add(toyList.get(userChoice-1).getName());
+			toyCartPrice.add(toyList.get(userChoice-1).getPrice());
+			toyCartNum.add(userQuantity);
 //			 grandTotal += subTotal*salesTax;
 
 		} else if (userCont.equalsIgnoreCase("n")) {
@@ -57,7 +65,7 @@ public class POSApp {
 
 		}
 		// int userInput = scnr.nextInt();
-
+		System.out.println(toyCartNum.toString() + ", "+toyCart.toString()+ ", for a total of $"+toyCartPrice.toString());
 	} // END MAIN METHOD
 
 // might move this to product util class later
