@@ -1,12 +1,12 @@
-Product1,1.11,cat1,des1
-Product2,2.22,cat2,des2
-Product3,3.33,cat3,des3
-Product4,4.44,cat4,des4
-Product5,5.55,cat5,des5
-Product6,6.66,cat6,des6
-Product7,7.77,cat7,des7
-Product8,8.88,cat8,des8
-Product9,9.99,cat9,des9
-Product10,10.10,cat10,des10
-Product11,11.11,cat11,des11
-Product12,12.12,cat12,des12
+GoldenEye 007,79.99,N64,des1
+Mario Kart 64,64.99,N64,des2
+Southpark Chef's Luv Shack,64.99,N64,des3
+Tony Hawk Pro Skater,79.99,N64,des4
+Bazooka,49.88,NERF,des5
+Crossbow,39.97,NERF,des6
+Sniper,34.88,NERF,des7
+Pistol,18.98,NERF,des8
+GameBoy,89.99,GB,des9
+GameBoy Color,69.99,GB,des10
+GameBoy Advance,99.99,GB,des11
+GameBoy SP,99.99,GB,des12
