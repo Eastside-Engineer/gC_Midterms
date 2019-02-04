@@ -1,4 +1,5 @@
 package gC_Midterms;
+//Java Bean holds only Data for the project 
 
 public class Toy {
 	
