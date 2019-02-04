@@ -18,7 +18,7 @@ public class POSApp {
 
 //Creating variables to hold items selected for cart
 		double subTotal = 0;
-		double grandTotal;
+		double grandTotal = 0;
 		final double salesTax = 1.06;
 
 // check for file existence for it is important
@@ -27,41 +27,36 @@ public class POSApp {
 
 		List<Toy> toyList = readFile();
 
-		for (int i = 0; i < toyList.size(); i++) {
-			// Trying to print the index of the menu.
-			// System.out.printf("%-9s", "\n" + toyList.);
-
-			System.out.print(i + 1 + ". "); // using the incrementor +1 to denote index AKA product nmber for user input
-			System.out.println(toyList.get(i).getName());
-			System.out.printf("%-10s", "$" + toyList.get(i).getPrice());
-			System.out.printf("%-10s \t", toyList.get(i).getCategory());
-			System.out.printf("%-9s", "\n" + toyList.get(i).getDescription());
-			System.out.println("\n");
-
-		}
+		getPrompt();
 // begin user input for adding items to SHOPPING CART
 		Scanner scnr = new Scanner(System.in);
 		int userChoice = ProductUtil.getProductNum(scnr, "Enter a product number: ", 1, toyList.size());
-		System.out.println("Do you want to add " + toyList.get(userChoice-1).getCategory() + ", " + toyList.get(userChoice-1).getName() + " to your cart?" );
+		System.out.println("Do you want to add " + toyList.get(userChoice - 1).getCategory() + ", "
+				+ toyList.get(userChoice - 1).getName() + " to your cart?");
 //		System.out.println("(y/n); ");
-		//conditional logic to validate user input
+		// conditional logic to validate user input
 		String userCont = Validator.getStringMatchingRegex(scnr, "(y/n): ", "[yYnN]");
 		if (userCont.equalsIgnoreCase("y")) {
-			 double userQuantity = Validator.getDouble(scnr, "How many of " + toyList.get(userChoice-1).getName() + " would you like to add?:", 0, 500);
-			 System.out.println((int) userQuantity +" of "+ toyList.get(userChoice-1).getName()+" have been added to the cart.");	
-		//Adding userQuantity times the price to the subTotal	
-			 subTotal += userQuantity*toyList.get(userChoice-1).getPrice();
-			 System.out.printf("%-9.2f", subTotal);
-			 
-		}else if (userCont.equalsIgnoreCase("n")) {
-			System.out.println(Validator.getStringMatchingRegex(scnr, "Would you like to look for another toy? (y/n): ", "[yYnN]"));
-			
-		}else {
+			double userQuantity = Validator.getDouble(scnr,
+					"How many of " + toyList.get(userChoice - 1).getName() + " would you like to add?:", 0, 500);
+			System.out.println((int) userQuantity + " of " + toyList.get(userChoice - 1).getName()
+					+ " have been added to the cart.");
+			// Adding userQuantity times the price to the subTotal
+			subTotal += userQuantity * toyList.get(userChoice - 1).getPrice();
+			System.out.println("Your Subtotal is:");
+			System.out.printf("$%-9.2f", subTotal);
+//			 grandTotal += subTotal*salesTax;
+
+		} else if (userCont.equalsIgnoreCase("n")) {
+			System.out.println(Validator.getStringMatchingRegex(scnr, "Would you like to look for another toy? (y/n): ",
+					"[yYnN]"));
+
+		} else {
 //			System.out.println(Validator.getStringMatchingRegex(scnr, "Display menu, Press 'm'", "[mM]"));
 //			System.out.println();
 
 		}
-		//int userInput = scnr.nextInt();
+		// int userInput = scnr.nextInt();
 
 	} // END MAIN METHOD
 
@@ -72,12 +67,23 @@ public class POSApp {
 		System.out.println("Welcome to Toys R' Us. The most profitable, long lasting Toy store in the world.\n");
 // cycle through products and print them on lines
 		List<String> toyInventory = Files.readAllLines(filePath);
+		List<Toy> toyList = readFile();
+//		for (String thisToy : toyInventory) {
+//			System.out.println(thisToy);
+			for (int i = 0; i < toyList.size(); i++) {
+				// Trying to print the index of the menu.
+				// System.out.printf("%-9s", "\n" + toyList.);
 
-		for (String thisToy : toyInventory) {
-			System.out.println(thisToy);
+				System.out.print(i + 1 + ". "); // using the incrementor +1 to denote index AKA product nmber for user input
+				System.out.println(toyList.get(i).getName());
+				System.out.printf("%-10s", "$" + toyList.get(i).getPrice());
+				System.out.printf("%-10s \t", toyList.get(i).getCategory());
+				System.out.printf("%-9s", "\n" + toyList.get(i).getDescription());
+				System.out.println("\n");
 
+			}
 		}
-	}
+//	}
 
 // creating a list of product objects called "products" and setting it equal to an array list separated b ycom
 
