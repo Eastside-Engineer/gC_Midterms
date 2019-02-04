@@ -51,7 +51,8 @@ public class POSApp {
 			 System.out.println((int) userQuantity +" of "+ toyList.get(userChoice-1).getName()+" have been added to the cart.");	
 		//Adding userQuantity times the price to the subTotal	
 			 subTotal += userQuantity*toyList.get(userChoice-1).getPrice();
-			 System.out.printf("Your running total is: $" +subTotal);
+			 System.out.printf("%-9.2f", subTotal);
+			 
 		}else if (userCont.equalsIgnoreCase("n")) {
 			System.out.println(Validator.getStringMatchingRegex(scnr, "Would you like to look for another toy? (y/n): ", "[yYnN]"));
 			

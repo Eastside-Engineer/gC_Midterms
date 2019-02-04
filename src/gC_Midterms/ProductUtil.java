@@ -55,8 +55,9 @@ public class ProductUtil {
 		} while (!isValid);
 		return number;
 	}
-
 }
+
+
 //Change Log:
 //13:54 PM 2/2/2019 - Removed ProductUtil "extends Product"
 //This file just contains methods we will call in the main. This
