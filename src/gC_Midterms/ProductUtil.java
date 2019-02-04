@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
@@ -15,11 +16,51 @@ public class ProductUtil {
 	private static Path filePath = Paths.get("inventory.txt");
 
 	// private or protected????
-	static List<String> getPrompt() throws IOException {
+	protected static void getPrompt() throws IOException {
 
-		List<String> books = Files.readAllLines(filePath);
+		System.out.println("Welcome to Toys R' Us. The most profitable, long lasting Toy store in the world.\n");
+// cycle through products and print them on lines
+		List<String> toyInventory = Files.readAllLines(filePath);
+		List<Toy> toyList = readFile();
 
-		return books;
+		for (int i = 0; i < toyList.size(); i++) {
+			// Trying to print the index of the menu.
+
+			System.out.print(i + 1 + ". "); // using the incrementor +1 to denote index AKA product number for user
+											// input
+			System.out.println(toyList.get(i).getName());
+			System.out.printf("%-10s", "$" + toyList.get(i).getPrice());
+			System.out.printf("%-10s \t", toyList.get(i).getCategory());
+			System.out.printf("%-9s", "\n" + toyList.get(i).getDescription());
+			System.out.println("\n");
+
+		}
+	}
+
+// creating a list of toys objects called "toyInventory" and setting it equal to an array list separated by commas.
+	public static List<Toy> readFile() throws IOException {
+
+		// pass the product class
+
+		List<String> toyInventory = Files.readAllLines(filePath);
+
+		List<Toy> toys = new ArrayList<>();
+
+		for (String thisToy : toyInventory) {
+			String[] parts = thisToy.split(",");
+			Toy p = new Toy(parts[0], Double.parseDouble(parts[1]), parts[2], parts[3]);
+
+			toys.add(p);
+		}
+
+		return toys;
+
+	}
+
+	public static void checkFile(Path filePath) throws IOException {
+		if (Files.notExists(filePath)) {
+			Files.createFile(filePath);
+		}
 	}
 
 	public static int getProductNum(Scanner scnr, String prompt) {
@@ -35,7 +76,7 @@ public class ProductUtil {
 			return getProductNum(scnr, prompt);
 		}
 	}
-	
+
 	public static double getQuantityDouble(Scanner scnr, String prompt, double min, double max) {
 		boolean isValid = false;
 		double number;
@@ -75,7 +116,7 @@ public class ProductUtil {
 		} while (!isValid);
 		return number;
 	}
-	
+
 	public static String getUserCont(Scanner scnr, String prompt, String regex) {
 		boolean isValid = false;
 		String input;
@@ -93,7 +134,6 @@ public class ProductUtil {
 		return input;
 	}
 }
-
 
 //Change Log:
 //13:54 PM 2/2/2019 - Removed ProductUtil "extends Product"

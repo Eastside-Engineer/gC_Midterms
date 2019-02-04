@@ -6,7 +6,7 @@ Bazooka,49.88,NERF,des5
 Crossbow,39.97,NERF,des6
 Sniper,34.88,NERF,des7
 Pistol,18.98,NERF,des8
-GameBoy,89.99,GB, The Nintendo Game Boy was released in 1989. It was a handheld video game console that combined aspects of Nintendos successful Nintendo Entertainment System (NES) television video game console with their earlier handheld electronic games marketed under the name "Game & Watch."
-GameBoy Color,69.99,GB, The Nintendo Game Boy was released in 1998. It is a colorized version of the handheld orig
-GameBoy Advance,99.99,GB,des11
-GameBoy SP,99.99,GB,des12
+GameBoy,89.99,GB, The Nintendo Game Boy was released in 1989. It was a handheld video game console that let's user "Game & Watch."
+GameBoy Color,69.99,GB, The Nintendo Game Boy Color was released in 1998. It is a colorized version of the handheld original classic Gameboy!
+GameBoy Advance,99.99,GB,The Nintendo Game Boy Advance was released in 2001. It provides the user with a larger screen and more pixels.
+GameBoy SP,99.99,GB,The Nintendo Game Boy Advance SP, released in 2003, is an upgraded version of Nintendo's Game Boy Advance. The "SP" in the name stands for "Special".

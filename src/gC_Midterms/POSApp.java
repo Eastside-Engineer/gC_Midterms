@@ -26,19 +26,19 @@ public class POSApp {
 		List<Double> toyCartNum = new ArrayList<Double>();
 
 // check for file existence for it is important
-		checkFile(filePath);
+		ProductUtil.checkFile(filePath);
 // methods that prints inventory
 
-		List<Toy> toyList = readFile();
+		List<Toy> toyList = ProductUtil.readFile();
 		while (run == true) {
-			getPrompt();
+			ProductUtil.getPrompt();
 // begin user input for adding items to SHOPPING CART
 			Scanner scnr = new Scanner(System.in);
 			int userChoice = ProductUtil.getProductNum(scnr, "Enter a product number: ", 1, toyList.size());
 			System.out.println("Do you want to add " + toyList.get(userChoice - 1).getCategory() + ", "
 					+ toyList.get(userChoice - 1).getName() + " to your cart?");
-//		System.out.println("(y/n); ");
-			// conditional logic to validate user input
+
+// conditional logic to validate user input
 			String userCont = ProductUtil.getUserCont(scnr, "(y/n): ", "[yYnN]");
 
 			if (userCont.equalsIgnoreCase("y")) {
@@ -47,26 +47,25 @@ public class POSApp {
 						"How many of " + toyList.get(userChoice - 1).getName() + " would you like to add?:", 0, 500);
 				System.out.println((int) userQuantity + " of " + toyList.get(userChoice - 1).getName()
 						+ " have been added to the cart.");
-				// Adding userQuantity times the price to the subTotal
+// Adding userQuantity times the price to the subTotal
 				subTotal += userQuantity * toyList.get(userChoice - 1).getPrice();
 
-				// We are storing the user input inside of para lol arrays. Like a boss.
+// We are storing the user input inside of para lol arrays. Like a boss.
 				toyCart.add(toyList.get(userChoice - 1).getName());
 				toyCartPrice.add(toyList.get(userChoice - 1).getPrice());
 				toyCartNum.add(userQuantity);
-				
-				// give user an option to check out after item is added 
+
+// give user an option to check out after item is added
 				System.out.println("Would you like to continue shopping?");
 				userCont = ProductUtil.getUserCont(scnr, "(y/n): ", "[yYnN]");
-				
-				if (userCont.equalsIgnoreCase("n")){
+
+				if (userCont.equalsIgnoreCase("n")) {
 					break;
 				}
 
-
 			} else if (userCont.equalsIgnoreCase("n")) {
-				System.out.println(ProductUtil.getUserCont(scnr,
-						"Would you like to look for another toy? (y/n): ", "[yYnN]"));
+				System.out.println(
+						ProductUtil.getUserCont(scnr, "Would you like to look for another toy? (y/n): ", "[yYnN]"));
 
 				if (userCont.equalsIgnoreCase("n")) {
 					break;
@@ -75,82 +74,28 @@ public class POSApp {
 					continue;
 				}
 
-			} else {
-
-			//	run = false;
-//			System.out.println(Validator.getStringMatchingRegex(scnr, "Display menu, Press 'm'", "[mM]"));
-//			System.out.println();
-
 			}
-			
-			
+
 		}
-		// int userInput = scnr.nextInt();
-		System.out.println("Thanks for shopping.");
+
+		System.out.println("Thanks for shopping with us at Toys 'R' Us!");
 		System.out.println("\n");
 //This is where we ask for payment type.
 		System.out.println("How would you like to pay? ");
+		
+		System.out.print("Your grand total is: $");
+		System.out.printf("%-9.2f", (grandTotal += subTotal * salesTax));
+		System.out.println();
+
+		
+		
 // This loop is for an invoice. It prints out the items ordered and their price.
-		for(int i = 0; i < toyCart.size(); i++) {
-			System.out.println(toyCartNum.get(i)+ " "+ toyCart.get(i)+" "+ toyCartPrice.get(i));
-		}
-		
-		
-		//System.out.print(toyCartNum.toString() + ", " + toyCart.toString() + ", for a total of ");
-		//System.out.printf("$%-9.2f", subTotal);
-		System.out.println("\nYour grand total is: "+(grandTotal += subTotal*salesTax));
-
-	} // END MAIN METHOD
-
-// might move this to product util class later
-
-	protected static void getPrompt() throws IOException {
-
-		System.out.println("Welcome to Toys R' Us. The most profitable, long lasting Toy store in the world.\n");
-// cycle through products and print them on lines
-		List<String> toyInventory = Files.readAllLines(filePath);
-		List<Toy> toyList = readFile();
-//		for (String thisToy : toyInventory) {
-//			System.out.println(thisToy);
-		for (int i = 0; i < toyList.size(); i++) {
-			// Trying to print the index of the menu.
-			// System.out.printf("%-9s", "\n" + toyList.);
-
-			System.out.print(i + 1 + ". "); // using the incrementor +1 to denote index AKA product nmber for user input
-			System.out.println(toyList.get(i).getName());
-			System.out.printf("%-10s", "$" + toyList.get(i).getPrice());
-			System.out.printf("%-10s \t", toyList.get(i).getCategory());
-			System.out.printf("%-9s", "\n" + toyList.get(i).getDescription());
-			System.out.println("\n");
-
-		}
-	}
-//	}
-
-// creating a list of product objects called "products" and setting it equal to an array list separated b ycom
-
-	public static List<Toy> readFile() throws IOException {
-
-		// pass the product class
-
-		List<String> toyInventory = Files.readAllLines(filePath);
-
-		List<Toy> toys = new ArrayList<>();
-
-		for (String thisToy : toyInventory) {
-			String[] parts = thisToy.split(",");
-			Toy p = new Toy(parts[0], Double.parseDouble(parts[1]), parts[2], parts[3]);
-
-			toys.add(p);
+		for (int i = 0; i < toyCart.size(); i++) {
+			System.out.println(toyCartNum.get(i) + " " + toyCart.get(i) + " " + toyCartPrice.get(i));
 		}
 
-		return toys;
+		System.out.println("\nYour grand total is: " + (grandTotal += subTotal * salesTax));
 
 	}
-
-	public static void checkFile(Path filePath) throws IOException {
-		if (Files.notExists(filePath)) {
-			Files.createFile(filePath);
-		}
-	}
+// END MAIN METHOD
 }
