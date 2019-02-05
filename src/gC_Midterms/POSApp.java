@@ -28,7 +28,7 @@ public class POSApp {
 		List<Double> toyCartPrice = new ArrayList<Double>();
 		List<Double> toyCartNum = new ArrayList<Double>();
 		Scanner scnr = new Scanner(System.in);
-		
+
 // check for file existence for it is important
 		ProductUtil.checkFile(filePath);
 // methods that prints inventory
@@ -83,8 +83,7 @@ public class POSApp {
 		}
 //This should only display when there are no items in the cart and user exits.
 		System.out.println("Thanks for shopping with us at Toys 'R' Us!");
-		
-		
+
 		System.out.println("\n");
 //This is where we ask for payment type.
 		System.out.println("How would you like to pay? ");
@@ -94,20 +93,27 @@ public class POSApp {
 		int paymentChoice = ProductUtil.getProductNum(scnr, "Enter 1 for Cash, 2 for Check, 3 for Credit Card: ", 1, 3);
 		if (paymentChoice == 1) {
 
-		 tendered = ProductUtil.getQuantityDouble(scnr, "Cash tendered amount: ", grandTotal, (grandTotal + 100));
-			
+			tendered = ProductUtil.getQuantityDouble(scnr, "Cash tendered amount: ", grandTotal, (grandTotal + 100));
 
 		} else if (paymentChoice == 2) {
 			checkNumber = ProductUtil.getCheck(scnr, "Please enter your Check number: ", 1, 9999);
 			System.out.println("Thank you.");
 			System.out.println(checkNumber);
-	
+
 		} else if (paymentChoice == 3) {
 //We wanted to make sure we could validate all major credit cards.			
-			creditCardNumber = ProductUtil.getCreditCard(scnr, "Please enter your credit card number: ", "^(?:(?<visa>4[0-9]{12}(?:[0-9]{3})?)|" +
-			        "(?<mastercard>5[1-5][0-9]{14})|" +
-			        "(?<discover>6(?:011|5[0-9]{2})[0-9]{12})|" +
-			        "(?<amex>3[47][0-9]{13}))$");
+			creditCardNumber = ProductUtil.getCreditCard(scnr, "Please enter your credit card number: ",
+					"^(?:(?<visa>4[0-9]{12}(?:[0-9]{3})?)|" + "(?<mastercard>5[1-5][0-9]{14})|"
+							+ "(?<discover>6(?:011|5[0-9]{2})[0-9]{12})|" + "(?<amex>3[47][0-9]{13}))$");
+/*Start here by adding credit card expiration and CVV validation.
+ * 
+ * 
+ * 
+ * 
+ * Methods maybe
+ */
+			
+			
 			System.out.println(creditCardNumber);
 		}
 		System.out.println("Here's your itemized receipt: ");
@@ -127,13 +133,13 @@ public class POSApp {
 			for (int i = 0; i < toyCart.size(); i++) {
 				System.out.println(toyCartNum.get(i) + " " + toyCart.get(i) + " " + toyCartPrice.get(i));
 			}
-			System.out.println("Thank you for your credit card payment ending in: " + creditCardNumber.substring(11));
+			System.out.println("Thank you for your credit card payment ending in: " + creditCardNumber.substring(12));
 		}
-			
+
 // This loop is for an invoice. It prints out the items ordered and their price.
-		for (int i = 0; i < toyCart.size(); i++) {
-			System.out.println(toyCartNum.get(i) + " " + toyCart.get(i) + " " + toyCartPrice.get(i));
-		}
+//		for (int i = 0; i < toyCart.size(); i++) {
+//			System.out.println(toyCartNum.get(i) + " " + toyCart.get(i) + " " + toyCartPrice.get(i));
+//		}
 
 		System.out.println("\nYour grand total is: " + (grandTotal = subTotal * salesTax));
 
