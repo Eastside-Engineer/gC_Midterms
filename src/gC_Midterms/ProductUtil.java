@@ -133,6 +133,15 @@ public class ProductUtil {
 		} while (!isValid);
 		return input;
 	}
+
+	public static Double getChange(double tendered, double grandTotal) {
+
+		// subtracts cash tendered (SCNR) from grand TOtal
+
+		double change = tendered - grandTotal;
+
+		return change;
+	}
 }
 
 //Change Log:

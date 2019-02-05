@@ -34,7 +34,7 @@ public class POSApp {
 		while (run == true) {
 			ProductUtil.getPrompt();
 // begin user input for adding items to SHOPPING CART
-		
+
 			int userChoice = ProductUtil.getProductNum(scnr, "Enter a product number: ", 1, toyList.size());
 			System.out.println("Do you want to add " + toyList.get(userChoice - 1).getCategory() + ", "
 					+ toyList.get(userChoice - 1).getName() + " to your cart?");
@@ -83,30 +83,32 @@ public class POSApp {
 		System.out.println("\n");
 //This is where we ask for payment type.
 		System.out.println("How would you like to pay? ");
-		
-		int paymentChoice = ProductUtil.getProductNum(scnr, "Enter 1 for Cash, 2 for Check, 3 for Credit Card: ", 1, 3);
-			if(paymentChoice == 1) {
-				//cash validation (easy)
-				
-			}else if(paymentChoice == 2) {
-				//Check validation
-			}else if(paymentChoice == 3) {
-				//Credit Card Validation
-			}
-		
-		
 		System.out.print("Your grand total is: $");
-		System.out.printf("%-9.2f", (grandTotal += subTotal * salesTax));
-		System.out.println();
+		System.out.printf("%-9.2f", (grandTotal = subTotal * salesTax));
 
-		
-				
+		int paymentChoice = ProductUtil.getProductNum(scnr, "Enter 1 for Cash, 2 for Check, 3 for Credit Card: ", 1, 3);
+		if (paymentChoice == 1) {
+
+			double tendered = ProductUtil.getQuantityDouble(scnr, "Cash tendered amount: ", grandTotal, (grandTotal + 100));
+			System.out.println("Your change is: $" + ProductUtil.getChange(tendered, grandTotal));
+			
+
+		} else if (paymentChoice == 2) {
+			// Check validation
+		} else if (paymentChoice == 3) {
+			// Credit Card Validation
+		}
+
+		//System.out.print("Your grand total is: $");
+		//System.out.printf("%-9.2f", (grandTotal += subTotal * salesTax));
+	//	System.out.println(ProductUtil.getChange(scnr, grandTotal));
+
 // This loop is for an invoice. It prints out the items ordered and their price.
 		for (int i = 0; i < toyCart.size(); i++) {
 			System.out.println(toyCartNum.get(i) + " " + toyCart.get(i) + " " + toyCartPrice.get(i));
 		}
 
-		System.out.println("\nYour grand total is: " + (grandTotal += subTotal * salesTax));
+		System.out.println("\nYour grand total is: " + (grandTotal = subTotal * salesTax));
 
 	}
 // END MAIN METHOD
