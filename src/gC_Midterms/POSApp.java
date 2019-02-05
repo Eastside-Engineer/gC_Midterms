@@ -149,7 +149,10 @@ do {
 		if (paymentChoice == 1) {
 
 			for (int i = 0; i < toyCart.size(); i++) {
-				System.out.println(toyCartNum.get(i).intValue() + " " + toyCart.get(i) + " $" + toyCartPrice.get(i));
+				System.out.printf("%-12s", toyCartNum.get(i).intValue());
+				System.out.printf("%-20s", " $" + (toyCartPrice.get(i)));
+				System.out.printf("%-8s", toyCart.get(i));
+		
 			}
 			System.out.print("\nYour change is: ");
 			System.out.printf("$%-9.2f", ProductUtil.getChange(tendered, grandTotal));
