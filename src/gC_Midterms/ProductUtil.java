@@ -193,7 +193,7 @@ public class ProductUtil {
 		return input;
 }
 	public static Date getCreditCardEXP(Scanner scnr, String prompt) {
-		SimpleDateFormat format = new SimpleDateFormat("DD/yyyy");
+		SimpleDateFormat format = new SimpleDateFormat("MM/YYYY");
 		format.setLenient(false); // <-- date format must match
 		boolean isValid = false;
 		Date date = null;
@@ -211,7 +211,7 @@ public class ProductUtil {
 			} catch (ParseException ex) {
 				// If exception occurs, it's invalid.
 				isValid = false;
-				System.out.println("Enter a valid date in format mm/dd/yyyy.");
+				System.out.println("Enter a valid date in format MM/YYYY.");
 			}
 
 		} while (!isValid);
