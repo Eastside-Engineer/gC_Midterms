@@ -25,14 +25,14 @@ public class ProductUtil {
 // cycle through products and print them on lines
 		List<String> toyInventory = Files.readAllLines(filePath);
 		List<Toy> toyList = readFile();
-
+		System.out.println("=NUMBER ==== CATEGORY ==== NAME ==== PRICE ==== DESCRIPTION");
 		for (int i = 0; i < toyList.size(); i++) {
 // header for inventory print out 
-			System.out.println("=NUMBER ==== CATEGORY ==== NAME ==== PRICE ==== DESCRIPTION");
+			
 
 			System.out.print(i + 1 + ". "); // using the incrementor +1 to denote index AKA product number for user
 											// input
-			System.out.println(toyList.get(i).getName());
+			System.out.printf("%-10s",toyList.get(i).getName());
 			System.out.printf("%-10s", "$" + toyList.get(i).getPrice());
 			System.out.printf("%-10s \t", toyList.get(i).getCategory());
 			System.out.printf("%-9s", "\n" + toyList.get(i).getDescription());

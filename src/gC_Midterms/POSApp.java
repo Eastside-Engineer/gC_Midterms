@@ -24,6 +24,8 @@ public class POSApp {
 		double tendered = 0.00;
 		String checkNumber = "0";
 		String creditCardNumber = "0";
+		String creditCardCVV = "0";
+		String creditCardExp = "0";
 		List<String> toyCart = new ArrayList<String>();
 		List<Double> toyCartPrice = new ArrayList<Double>();
 		List<Double> toyCartNum = new ArrayList<Double>();
@@ -101,20 +103,14 @@ public class POSApp {
 			System.out.println(checkNumber);
 
 		} else if (paymentChoice == 3) {
-//We wanted to make sure we could validate all major credit cards.			
-			creditCardNumber = ProductUtil.getCreditCard(scnr, "Please enter your credit card number: ",
+//We wanted to make sure we could validate all major credit cards.
+			creditCardNumber = ProductUtil.getCreditCard(scnr, "Please enter your credit card number without dashes or spaces: ",
 					"^(?:(?<visa>4[0-9]{12}(?:[0-9]{3})?)|" + "(?<mastercard>5[1-5][0-9]{14})|"
 							+ "(?<discover>6(?:011|5[0-9]{2})[0-9]{12})|" + "(?<amex>3[47][0-9]{13}))$");
-/*Start here by adding credit card expiration and CVV validation.
- * 
- * 
- * 
- * 
- * Methods maybe
- */
+			creditCardCVV = ProductUtil.getCreditCard(scnr, "Please enter 3-digit security code on the back of your card: ", "(^[0-9]{3,4})$");
+			creditCardExp = ProductUtil.getDate(scnr, "Please enter your expiration date: (mm/yyyy) ", "([1-9]|0[1-9]|1[012])/([0-9][0-9])");
 			
-			
-			System.out.println(creditCardNumber);
+			//System.out.println(creditCardNumber);
 		}
 		System.out.println("Here's your itemized receipt: ");
 		if (paymentChoice == 1) {
@@ -136,10 +132,6 @@ public class POSApp {
 			System.out.println("Thank you for your credit card payment ending in: " + creditCardNumber.substring(12));
 		}
 
-// This loop is for an invoice. It prints out the items ordered and their price.
-//		for (int i = 0; i < toyCart.size(); i++) {
-//			System.out.println(toyCartNum.get(i) + " " + toyCart.get(i) + " " + toyCartPrice.get(i));
-//		}
 
 		System.out.println("\nYour grand total is: " + (grandTotal = subTotal * salesTax));
 

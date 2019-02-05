@@ -1,4 +1,4 @@
-Major League Baseball Featuring Ken Griffey Jr.,79.99,N64,n arcade-style baseball video game produced by Nintendo and developed by Angel Studios.
+Major League Baseball Featuring Ken Griffey Jr.,79.99,N64,An arcade-style baseball video game produced by Nintendo and developed by Angel Studios.
 Pokémon Snap,64.99,N64,A Pokémon photographer is summoned by Professor Oak to Pokémon Island a place with a variety of climatic and geographic regions.
 Super Mario 64,64.99,N64,Collect stars and rescue Peach (again?) in an all-new 3D environment. 
 Mario Kart 64,79.99,N64,If you fall off of Rainbow Road just right I mean perfectly you can easily beat anyone.  
