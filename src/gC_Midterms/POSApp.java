@@ -1,6 +1,7 @@
 package gC_Midterms;
 
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
@@ -21,6 +22,10 @@ public class POSApp {
 		double grandTotal = 0;
 		final double salesTaxMultiplier = 1.06;
 		final double salesTax = 0.06; 
+		double theSalesTax = 0;
+		//BigDecimal bigGrandTotal = new BigDecimal(grandTotal);
+		//BigDecimal bigSubTotal = new BigDecimal(subTotal);
+		//BigDecimal bigSalesTax = new BigDecimal(theSalesTax);
 		boolean run = true;
 		boolean fullLoop = true;
 		double tendered = 0.00;
@@ -97,9 +102,16 @@ do {
 //This is where we ask for payment type.
 	if(toyCart.size() > 0) {
 		System.out.println("How would you like to pay? ");
-		double theSalesTax = subTotal*salesTax;
+		theSalesTax = subTotal*salesTax;
 		grandTotal = subTotal * salesTaxMultiplier;
-		System.out.println(ProductUtil.getReceipt(grandTotal, subTotal, theSalesTax));
+		//System.out.println(ProductUtil.getReceipt(grandTotal, subTotal, theSalesTax));
+		System.out.println();
+		System.out.printf("%-9.2f",subTotal);
+		System.out.println();
+		System.out.printf("%-9.2f",theSalesTax);
+		System.out.println();
+		System.out.printf("%-9.2f",grandTotal);
+		System.out.println("TEST");
 //		System.out.print("\nYour grand total is: $");
 //		System.out.printf("%-9.2f", (grandTotal = subTotal * salesTax));
 
