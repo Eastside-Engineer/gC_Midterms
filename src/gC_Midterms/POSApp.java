@@ -29,7 +29,7 @@ public class POSApp {
 		boolean run = true;
 		boolean fullLoop = true;
 		double tendered = 0.00;
-		double rand = Math.random() * 1000 + 1;
+	//	double rand = Math.random() * 1000 + 1;
 		String checkNumber = "0";
 		String creditCardNumber = "0";
 		String creditCardCVV = "0";
@@ -143,9 +143,8 @@ do {
 
 			// System.out.println(creditCardNumber);
 
-		}
-		System.out.println("\nToys R' Us INVOICE: " + (int) rand + "       STORE # 3945 Detroit, MICHIGAN");
-		System.out.println("============================================================");
+		} ProductUtil.getInvoiceHeader();
+		
 
 		if (paymentChoice == 1) {
 
