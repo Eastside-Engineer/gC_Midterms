@@ -71,7 +71,7 @@ public class ProductUtil {
 			scnr.nextLine();
 			return num;
 		} catch (InputMismatchException e) {
-			System.out.println("Enter a whole number, using digits.");
+			System.err.println("Enter a whole number, using digits.");
 			scnr.nextLine();
 			return getProductNum(scnr, prompt);
 		}
@@ -85,10 +85,10 @@ public class ProductUtil {
 
 			if (number < min) {
 				isValid = false;
-				System.out.println("The number must be at least " + min);
+				System.err.println("The number must be at least " + min);
 			} else if (number > max) {
 				isValid = false;
-				System.out.println("The number must not be larger than " + max);
+				System.err.println("The number must not be larger than " + max);
 			} else {
 				isValid = true;
 			}
@@ -105,10 +105,10 @@ public class ProductUtil {
 
 			if (number < min) {
 				isValid = false;
-				System.out.println("The number must be at least " + min);
+				System.err.println("The number must be at least " + min);
 			} else if (number > max) {
 				isValid = false;
-				System.out.println("The number must not be larger than " + max);
+				System.err.println("The number must not be larger than " + max);
 			} else {
 				isValid = true;
 			}
@@ -126,7 +126,7 @@ public class ProductUtil {
 			if (input.matches(regex)) {
 				isValid = true;
 			} else {
-				System.out.println("Input must match the appropriate format.");
+				System.err.println("Input must match the appropriate format.");
 				isValid = false;
 			}
 
@@ -151,10 +151,10 @@ public class ProductUtil {
 
 			if (checkNumber < min) {
 				isValid = false;
-				System.out.println("The number must be at least " + min);
+				System.err.println("The number must be at least " + min);
 			} else if (checkNumber > max) {
 				isValid = false;
-				System.out.println("The number must not be larger than " + max);
+				System.err.println("The number must not be larger than " + max);
 			} else {
 				isValid = true;
 			}
@@ -181,7 +181,7 @@ public class ProductUtil {
 			if (input.matches(regex)) {
 				isValid = true;
 			} else {
-				System.out.println("Input must match the appropriate format.");
+				System.err.println("Input must match the appropriate format.");
 				isValid = false;
 			}
 
@@ -197,7 +197,7 @@ public class ProductUtil {
 			if (input.matches(regex)) {
 				isValid = true;
 			} else {
-				System.out.println("Input must match the appropriate format.");
+				System.err.println("Input must match the appropriate format.");
 				isValid = false;
 			}
 
@@ -213,7 +213,7 @@ public class ProductUtil {
 			if (input.matches(regex)) {
 				isValid = true;
 			} else {
-				System.out.println("Input must match the appropriate format.");
+				System.err.println("Input must match the appropriate format.");
 				isValid = false;
 			}
 
