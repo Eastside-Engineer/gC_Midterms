@@ -40,7 +40,10 @@ public class POSApp {
 do {
 		List<Toy> toyList = ProductUtil.readFile();
 		while (run == true) {
+			
+			ProductUtil.printGiraffe();
 			ProductUtil.printLogo();
+		
 			ProductUtil.getPrompt();
 // begin user input for adding items to SHOPPING CART
 
