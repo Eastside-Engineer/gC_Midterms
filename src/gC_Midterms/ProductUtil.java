@@ -25,7 +25,8 @@ public class ProductUtil {
 // cycle through products and print them on lines
 		List<String> toyInventory = Files.readAllLines(filePath);
 		List<Toy> toyList = readFile();
-		System.out.println("==# == Category == Price ============ Name ================ Description ================================= ");
+		System.out.println(
+				"==# == Category == Price ============ Name ================ Description ================================= ");
 		for (int i = 0; i < toyList.size(); i++) {
 // header for inventory print out 
 
@@ -250,6 +251,14 @@ public class ProductUtil {
 
 		} while (!isValid);
 		return input;
+	}
+
+	public static String getReceipt(double grandTotal, double subTotal, double salesTax) {
+
+		String formatReceipt = "\nSub Total = $" + subTotal + "\nSales Tax = $" + salesTax + "\nGrand Total = $"
+				+ grandTotal;
+
+		return formatReceipt;
 	}
 
 }
