@@ -96,8 +96,20 @@ public class POSApp {
 			
 
 		} else if (paymentChoice == 2) {
-			int checkNumber = ProductUtil.getCheck(scnr, "Please enter your Check number: ");
+			String checkNumber = ProductUtil.getCheck(scnr, "Please enter your Check number: ", 1, 9999);
 			System.out.println("Thank you.");
+			System.out.println(checkNumber);
+//			if(checkNumber < 10) {
+//				System.out.println("000"+checkNumber);
+//			}if(checkNumber > 10 && checkNumber<100) {
+//				System.out.println("00"+checkNumber);
+//			}if(100<checkNumber && checkNumber<1000) {
+//				System.out.println("0"+checkNumber);
+//			}else {
+//				System.out.println(checkNumber);
+//			}
+//			
+	
 		} else if (paymentChoice == 3) {
 //We wanted to make sure we could validate all major credit cards.			
 			String creditCardNumber = ProductUtil.getCreditCard(scnr, "Please enter your credit card number: ", "^(?:(?<visa>4[0-9]{12}(?:[0-9]{3})?)|" +

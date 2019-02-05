@@ -143,19 +143,35 @@ public class ProductUtil {
 		return change;
 	}
 	
-	public static int getCheck(Scanner scnr, String prompt) {
-		// This approach uses exception handling.
-		System.out.print(prompt);
-		try {
-			int checkNum = scnr.nextInt();
-			scnr.nextLine();
-			return checkNum;
-		} catch (InputMismatchException e) {
-			System.out.println("You must enter a check number.");
-			scnr.nextLine();
-			return getCheck(scnr, prompt);
+	public static String getCheck(Scanner scnr, String prompt, int min, int max) {
+		boolean isValid = false;
+		int checkNumber;
+		do {
+			checkNumber = getProductNum(scnr, prompt);
+
+			if (checkNumber < min) {
+				isValid = false;
+				System.out.println("The number must be at least " + min);
+			} else if (checkNumber > max) {
+				isValid = false;
+				System.out.println("The number must not be larger than " + max);
+			} else {
+				isValid = true;
+			}
+
+		} while (!isValid);
+		if(checkNumber < 10) {
+			return "000"+checkNumber;
+		}if(checkNumber > 10 && checkNumber<100) {
+			return "00"+checkNumber;
+		}if(100<checkNumber && checkNumber<1000) {
+			return "0"+checkNumber;
 		}
+		return ""+checkNumber;
 	}
+
+		
+	
 	public static String getCreditCard(Scanner scnr, String prompt, String regex) {
 		boolean isValid = false;
 		String input;
