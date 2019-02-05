@@ -1,7 +1,7 @@
-MLB Featuring Ken Griffey Jr.,79.99,N64,An arcade-style baseball video game produced by Nintendo and developed by Angel Studios.
-Pokémon Snap,64.99,N64,A Pokémon photographer is summoned by Professor Oak to Pokémon Island a place with a variety of climatic and geographic regions.
-Super Mario 64,64.99,N64,Collect stars and rescue Peach (again?) in an all-new 3D environment. 
-Mario Kart 64,79.99,N64,If you fall off of Rainbow Road just right I mean perfectly you can easily beat anyone.  
+MLB Featuring Ken Griffey Jr.,79.99,N64,An arcade-style baseball video game.
+Pokémon Snap,64.99,N64,A Pokémon photographer is summoned by Professor Oak.
+Super Mario 64,64.99,N64,Collect stars and rescue Peach (again?). 
+Mario Kart 64,79.99,N64,Find a glitch in Rainbow Road.  
 Doomlands Bazooka,49.88,NERF,When the little darts just don't cut it.
 Modulus Regulator Blaster,39.97,NERF,Destroy your friends and let none survive with 100 rounds of pure NERF love.
 Rebelle Focusfire Crossbow,34.88,NERF,Built with medieval design and deployed with modern fashion.

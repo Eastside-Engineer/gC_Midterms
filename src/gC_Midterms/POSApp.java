@@ -22,7 +22,7 @@ public class POSApp {
 		final double salesTax = 1.06;
 		boolean run = true;
 		double tendered = 0.00;
-		double rand = Math.random()*1000+1;
+		double rand = Math.random() * 1000 + 1;
 		String checkNumber = "0";
 		String creditCardNumber = "0";
 		String creditCardCVV = "0";
@@ -90,8 +90,10 @@ public class POSApp {
 		System.out.println("\n");
 //This is where we ask for payment type.
 		System.out.println("How would you like to pay? ");
-		System.out.print("\nYour grand total is: $");
-		System.out.printf("%-9.2f", (grandTotal = subTotal * salesTax));
+		grandTotal = subTotal * salesTax;
+		System.out.println(ProductUtil.getReceipt(grandTotal, subTotal, salesTax));
+//		System.out.print("\nYour grand total is: $");
+//		System.out.printf("%-9.2f", (grandTotal = subTotal * salesTax));
 
 		int paymentChoice = ProductUtil.getProductNum(scnr, "\n1 for Cash \n2 for Check \n3 for Credit Card: ", 1, 3);
 		if (paymentChoice == 1) {
@@ -110,22 +112,21 @@ public class POSApp {
 					"^(?:(?<visa>4[0-9]{12}(?:[0-9]{3})?)|" + "(?<mastercard>5[1-5][0-9]{14})|"
 							+ "(?<discover>6(?:011|5[0-9]{2})[0-9]{12})|" + "(?<amex>3[47][0-9]{13}))$");
 
-
-			
-			creditCardExp = ProductUtil.getCreditCardEXP(scnr, "\nPlease enter an expiration date in the format (MM/YYYY): ");
+			creditCardExp = ProductUtil.getCreditCardEXP(scnr,
+					"\nPlease enter an expiration date in the format (MM/YYYY): ");
 
 			// System.out.println(creditCardNumber);
 
-			creditCardCVV = ProductUtil.getCreditCard(scnr, "\nPlease enter 3-digit security code on the back of your card: ", "(^[0-9]{3,4})$");
+			creditCardCVV = ProductUtil.getCreditCard(scnr,
+					"\nPlease enter 3-digit security code on the back of your card: ", "(^[0-9]{3,4})$");
 
-			
-			//System.out.println(creditCardNumber);
+			// System.out.println(creditCardNumber);
 
 		}
-		System.out.println("\nToys R' Us INVOICE: "+ (int)rand);
-		
+		System.out.println("\nToys R' Us INVOICE: " + (int) rand + "        STORE # 3945 FAIRBANKS, ALASKA");
+
 		if (paymentChoice == 1) {
-		
+
 			for (int i = 0; i < toyCart.size(); i++) {
 				System.out.println(toyCartNum.get(i).intValue() + " " + toyCart.get(i) + " " + toyCartPrice.get(i));
 			}
@@ -145,6 +146,8 @@ public class POSApp {
 		}
 
 		System.out.println("\nYour grand total is: $" + (grandTotal = subTotal * salesTax));
+
+		/// back to the beginning
 
 	}
 // END MAIN METHOD
