@@ -105,13 +105,13 @@ do {
 		theSalesTax = subTotal*salesTax;
 		grandTotal = subTotal * salesTaxMultiplier;
 		//System.out.println(ProductUtil.getReceipt(grandTotal, subTotal, theSalesTax));
-		System.out.println();
-		System.out.printf("%-9.2f",subTotal);
-		System.out.println();
-		System.out.printf("%-9.2f",theSalesTax);
-		System.out.println();
-		System.out.printf("%-9.2f",grandTotal);
-		System.out.println("TEST");
+		System.out.println("Subtotal: ");
+		System.out.printf("$%-9.2f", subTotal);
+		System.out.println("\nSales Tax: " );
+		System.out.printf("$%-9.2f",theSalesTax);
+		System.out.println("\nGrand Total: " );
+		System.out.printf("$%-9.2f",grandTotal);
+//		System.out.println("TEST");
 //		System.out.print("\nYour grand total is: $");
 //		System.out.printf("%-9.2f", (grandTotal = subTotal * salesTax));
 
