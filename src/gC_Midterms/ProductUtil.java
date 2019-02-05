@@ -27,7 +27,8 @@ public class ProductUtil {
 		List<Toy> toyList = readFile();
 
 		for (int i = 0; i < toyList.size(); i++) {
-			// Trying to print the index of the menu.
+// header for inventory print out 
+			System.out.println("=NUMBER ==== CATEGORY ==== NAME ==== PRICE ==== DESCRIPTION");
 
 			System.out.print(i + 1 + ". "); // using the incrementor +1 to denote index AKA product number for user
 											// input
