@@ -21,12 +21,12 @@ public class ProductUtil {
 	// private or protected????
 	protected static void getPrompt() throws IOException {
 
-		System.out.println("Welcome to Toys R' Us. The most profitable, long lasting Toy store in the world.\n");
+		System.out.println("\t\t   Welcome to Toys R' Us. The most profitable, long lasting Toy store in the world.\n");
 // cycle through products and print them on lines
 		List<String> toyInventory = Files.readAllLines(filePath);
 		List<Toy> toyList = readFile();
 		System.out.println(
-				"==# == Category == Price ============ Name ================ Description ================================= ");
+				"# === Category === Price ============ Name ================ Description =============================================== ");
 		for (int i = 0; i < toyList.size(); i++) {
 // header for inventory print out 
 

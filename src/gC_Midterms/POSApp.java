@@ -48,6 +48,8 @@ do {
 			
 			ProductUtil.printGiraffe();
 			ProductUtil.printLogo();
+			
+			System.out.println();
 		
 			ProductUtil.getPrompt();
 // begin user input for adding items to SHOPPING CART
@@ -142,7 +144,8 @@ do {
 			// System.out.println(creditCardNumber);
 
 		}
-		System.out.println("\nToys R' Us INVOICE: " + (int) rand + "        STORE # 3945 FAIRBANKS, ALASKA");
+		System.out.println("\nToys R' Us INVOICE: " + (int) rand + "       STORE # 3945 Detroit, MICHIGAN");
+		System.out.println("============================================================");
 
 		if (paymentChoice == 1) {
 
@@ -152,18 +155,17 @@ do {
 			System.out.print("\nYour change is: ");
 			System.out.printf("$%-9.2f", ProductUtil.getChange(tendered, grandTotal));
 			System.out.println();
-			//System.out.printf("$%-9.2f", subTotal);
-			//System.out.println("\nYour change is: $" + ProductUtil.getChange(tendered, grandTotal));
+			
 		}
 		if (paymentChoice == 2) {
 			for (int i = 0; i < toyCart.size(); i++) {
-				System.out.println(toyCartNum.get(i).intValue() + " " + toyCart.get(i) + " " + toyCartPrice.get(i));
+				System.out.println(toyCartNum.get(i).intValue() + " " + toyCart.get(i) + " $" + toyCartPrice.get(i));
 			}
 			System.out.println("\nThank you for your check number: #" + checkNumber);
 		}
 		if (paymentChoice == 3) {
 			for (int i = 0; i < toyCart.size(); i++) {
-				System.out.println(toyCartNum.get(i).intValue() + " " + toyCart.get(i) + " " + toyCartPrice.get(i));
+				System.out.println(toyCartNum.get(i).intValue() + " " + toyCart.get(i) + " $" + toyCartPrice.get(i));
 			}
 			System.out.println("\nThank you for your credit card payment ending in: " + creditCardNumber.substring(12));
 		}
@@ -178,6 +180,7 @@ do {
 		String newOrder = ProductUtil.getUserCont(scnr, "Would you like to place a new order?", "[yYnN]");
 		if (newOrder.equalsIgnoreCase("n")) {
 			fullLoop = false;
+			System.out.println("Have a day full of fun and return to Toys 'R' Us!");
 			break;
 		}else {
 			fullLoop = true;
