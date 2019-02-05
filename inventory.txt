@@ -7,6 +7,6 @@ Modulus Regulator Blaster,39.97,NERF,Destroy your friends and let none survive w
 Rebelle Focusfire Crossbow,34.88,NERF,Built with medieval design and deployed with modern fashion.
 N-Strike Blaster,18.98,NERF,Strike down all who oppose you with the ultimate six shooter!
 GameBoy,89.99,GB,Game Boy was released in 1989. It was a handheld video game console that let's user "Game & Watch."
-GameBoy Color,69.99,GB,Game Boy Color was released in 1998. It is a colorized version of the handheld original classic Gameboy!
-GameBoy Advance,99.99,GB,Game Boy Advance was released in 2001. It provides the user with a larger screen and more pixels.
-GameBoy SP,99.99,GB,Game Boy Advance SP, released in 2003, is an upgraded version of Nintendo's Game Boy Advance. The "SP" in the name stands for "Special".
+GameBoy Color,69.99,GB,Game Boy Color was released in 1998. 
+GameBoy Advance,99.99,GB,Game Boy Advance was released in 2001.
+GameBoy SP,99.99,GB,Game Boy Advance SP released in 2003 is an upgraded version of Nintendo's Game Boy Advance.
