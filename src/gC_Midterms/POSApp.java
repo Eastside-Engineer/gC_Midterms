@@ -19,8 +19,10 @@ public class POSApp {
 //Creating variables to hold items selected for cart
 		double subTotal = 0;
 		double grandTotal = 0;
-		final double salesTax = 1.06;
+		final double salesTaxMultiplier = 1.06;
+		final double salesTax = .06; 
 		boolean run = true;
+		boolean fullLoop = true;
 		double tendered = 0.00;
 		double rand = Math.random() * 1000 + 1;
 		String checkNumber = "0";
@@ -35,7 +37,7 @@ public class POSApp {
 // check for file existence for it is important
 		ProductUtil.checkFile(filePath);
 // methods that prints inventory
-
+do {
 		List<Toy> toyList = ProductUtil.readFile();
 		while (run == true) {
 			ProductUtil.getPrompt();
@@ -89,9 +91,11 @@ public class POSApp {
 
 		System.out.println("\n");
 //This is where we ask for payment type.
+		if(toyList.size() > 0) {
 		System.out.println("How would you like to pay? ");
-		grandTotal = subTotal * salesTax;
-		System.out.println(ProductUtil.getReceipt(grandTotal, subTotal, salesTax));
+		double theSalesTax = subTotal*salesTax;
+		grandTotal = subTotal * salesTaxMultiplier;
+		System.out.println(ProductUtil.getReceipt(grandTotal, subTotal, theSalesTax));
 //		System.out.print("\nYour grand total is: $");
 //		System.out.printf("%-9.2f", (grandTotal = subTotal * salesTax));
 
@@ -145,10 +149,24 @@ public class POSApp {
 			System.out.println("\nThank you for your credit card payment ending in: " + creditCardNumber.substring(12));
 		}
 
-		System.out.println("\nYour grand total is: $" + (grandTotal = subTotal * salesTax));
+		
 
 		/// back to the beginning
-
-	}
+		}else {
+			run = true;
+		}
+		
+		String newOrder = ProductUtil.getUserCont(scnr, "Would you like to place a new order?", "[yYnN]");
+		if (newOrder.equalsIgnoreCase("y")) {
+			fullLoop = false;
+			break;
+		}else {
+			fullLoop = true;
+		}
+			
+			
+		
+	}while (fullLoop = true);
 // END MAIN METHOD
+}
 }
