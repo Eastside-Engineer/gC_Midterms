@@ -5,7 +5,10 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
@@ -151,10 +154,10 @@ public class ProductUtil {
 
 			if (checkNumber < min) {
 				isValid = false;
-				System.err.println("The number must be at least " + min);
+				System.err.println("The check number must be at least " + min);
 			} else if (checkNumber > max) {
 				isValid = false;
-				System.err.println("The number must not be larger than " + max);
+				System.err.println("The check number must not be larger than " + max);
 			} else {
 				isValid = true;
 			}
@@ -220,6 +223,23 @@ public class ProductUtil {
 		} while (!isValid);
 		return input;
 }
+	public static String getDate(Scanner scnr, String prompt, String regex) {
+		boolean isValid = false;
+		String input;
+		do {
+			input = Validator.getString(scnr, prompt);
+
+			if (input.matches(regex)) {
+				isValid = true;
+			} else {
+				System.err.println("Input must match the appropriate format.");
+				isValid = false;
+			}
+
+		} while (!isValid);
+		return input;
+}
+
 }
 
 //Change Log:
