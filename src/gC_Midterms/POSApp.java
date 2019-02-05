@@ -20,7 +20,7 @@ public class POSApp {
 		double subTotal = 0;
 		double grandTotal = 0;
 		final double salesTaxMultiplier = 1.06;
-		final double salesTax = .06; 
+		final double salesTax = 0.06; 
 		boolean run = true;
 		boolean fullLoop = true;
 		double tendered = 0.00;
@@ -40,6 +40,7 @@ public class POSApp {
 do {
 		List<Toy> toyList = ProductUtil.readFile();
 		while (run == true) {
+			ProductUtil.printLogo();
 			ProductUtil.getPrompt();
 // begin user input for adding items to SHOPPING CART
 
