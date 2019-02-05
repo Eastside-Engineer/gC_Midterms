@@ -162,7 +162,7 @@ do {
 			break;
 		}else {
 			fullLoop = true;
-			break;
+			
 		}
 			
 			
