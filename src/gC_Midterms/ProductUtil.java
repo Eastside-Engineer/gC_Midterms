@@ -253,14 +253,9 @@ public class ProductUtil {
 		return input;
 	}
 
-	public static String getReceipt(double grandTotal, double subTotal, double salesTax) {
+	
 
-		String formatReceipt = "\nSub Total = $" + Math.round(subTotal*100.0)/100.0 + "\nSales Tax = $" + Math.round(salesTax*100.0)/100.0 + "\nGrand Total = $"
-				+ Math.round(grandTotal*100.0)/100.0;
 
-		return formatReceipt;
-
-	}
 
 	public static void printLogo() {
 

@@ -104,16 +104,15 @@ do {
 		System.out.println("How would you like to pay? ");
 		theSalesTax = subTotal*salesTax;
 		grandTotal = subTotal * salesTaxMultiplier;
-		//System.out.println(ProductUtil.getReceipt(grandTotal, subTotal, theSalesTax));
-		System.out.println("Subtotal: ");
+//This is where totals are printed out for the receipt.
+		System.out.print("Subtotal: ");
 		System.out.printf("$%-9.2f", subTotal);
-		System.out.println("\nSales Tax: " );
+		System.out.print("\nSales Tax: " );
 		System.out.printf("$%-9.2f",theSalesTax);
-		System.out.println("\nGrand Total: " );
+		System.out.print("\nGrand Total: " );
 		System.out.printf("$%-9.2f",grandTotal);
-//		System.out.println("TEST");
-//		System.out.print("\nYour grand total is: $");
-//		System.out.printf("%-9.2f", (grandTotal = subTotal * salesTax));
+		System.out.println();
+
 
 		int paymentChoice = ProductUtil.getProductNum(scnr, "\n1 for Cash \n2 for Check \n3 for Credit Card: ", 1, 3);
 		if (paymentChoice == 1) {
@@ -148,9 +147,13 @@ do {
 		if (paymentChoice == 1) {
 
 			for (int i = 0; i < toyCart.size(); i++) {
-				System.out.println(toyCartNum.get(i).intValue() + " " + toyCart.get(i) + " " + toyCartPrice.get(i));
+				System.out.println(toyCartNum.get(i).intValue() + " " + toyCart.get(i) + " $" + toyCartPrice.get(i));
 			}
-			System.out.println("\nYour change is: $" + ProductUtil.getChange(tendered, grandTotal));
+			System.out.print("\nYour change is: ");
+			System.out.printf("$%-9.2f", ProductUtil.getChange(tendered, grandTotal));
+			System.out.println();
+			//System.out.printf("$%-9.2f", subTotal);
+			//System.out.println("\nYour change is: $" + ProductUtil.getChange(tendered, grandTotal));
 		}
 		if (paymentChoice == 2) {
 			for (int i = 0; i < toyCart.size(); i++) {
