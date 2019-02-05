@@ -1,4 +1,4 @@
- package gC_Midterms;
+package gC_Midterms;
 
 import java.io.IOException;
 
@@ -25,17 +25,16 @@ public class ProductUtil {
 // cycle through products and print them on lines
 		List<String> toyInventory = Files.readAllLines(filePath);
 		List<Toy> toyList = readFile();
-		System.out.println("= NUMBER ==== CATEGORY ==== NAME ==== PRICE ==== DESCRIPTION");
+		System.out.println("==# == Category == Price ============ Name ================ Description ================================= ");
 		for (int i = 0; i < toyList.size(); i++) {
 // header for inventory print out 
-			
 
-			System.out.print(i + 1 + ". "); // using the incrementor +1 to denote index AKA product number for user
-											// input
-			System.out.printf("%-10s",toyList.get(i).getName());
-			System.out.printf("%-10s", " $" + toyList.get(i).getPrice());
-			System.out.printf("%-10s \t", toyList.get(i).getCategory());
-			System.out.printf("%-9s", "\n" + toyList.get(i).getDescription());
+			System.out.printf("%-9s", i + 1 + ". "); // using the incrementor +1 to denote index AKA product number for
+														// user
+			System.out.printf("%-8s", toyList.get(i).getCategory());
+			System.out.printf("%-12s", " $" + toyList.get(i).getPrice());// input
+			System.out.printf("%-30s ", toyList.get(i).getName());
+			System.out.printf("%-50s", toyList.get(i).getDescription());
 			System.out.println("\n");
 
 		}
@@ -146,7 +145,7 @@ public class ProductUtil {
 
 		return change;
 	}
-	
+
 	public static String getCheck(Scanner scnr, String prompt, int min, int max) {
 		boolean isValid = false;
 		int checkNumber;
@@ -164,18 +163,18 @@ public class ProductUtil {
 			}
 
 		} while (!isValid);
-		if(checkNumber < 10) {
-			return "000"+checkNumber;
-		}if(checkNumber > 10 && checkNumber<100) {
-			return "00"+checkNumber;
-		}if(100<checkNumber && checkNumber<1000) {
-			return "0"+checkNumber;
+		if (checkNumber < 10) {
+			return "000" + checkNumber;
 		}
-		return ""+checkNumber;
+		if (checkNumber > 10 && checkNumber < 100) {
+			return "00" + checkNumber;
+		}
+		if (100 < checkNumber && checkNumber < 1000) {
+			return "0" + checkNumber;
+		}
+		return "" + checkNumber;
 	}
 
-		
-	
 	public static String getCreditCard(Scanner scnr, String prompt, String regex) {
 		boolean isValid = false;
 		String input;
@@ -191,7 +190,8 @@ public class ProductUtil {
 
 		} while (!isValid);
 		return input;
-}
+	}
+
 	public static Date getCreditCardEXP(Scanner scnr, String prompt) {
 		SimpleDateFormat format = new SimpleDateFormat("MM/YYYY");
 		format.setLenient(false); // <-- date format must match
@@ -217,7 +217,7 @@ public class ProductUtil {
 		} while (!isValid);
 		return date;
 	}
-	
+
 	public static String getCreditCardCVV(Scanner scnr, String prompt, String regex) {
 		boolean isValid = false;
 		String input;
@@ -233,7 +233,8 @@ public class ProductUtil {
 
 		} while (!isValid);
 		return input;
-}
+	}
+
 	public static String getDate(Scanner scnr, String prompt, String regex) {
 		boolean isValid = false;
 		String input;
@@ -249,7 +250,7 @@ public class ProductUtil {
 
 		} while (!isValid);
 		return input;
-}
+	}
 
 }
 

@@ -123,6 +123,7 @@ public class POSApp {
 
 		}
 		System.out.println("\nToys R' Us INVOICE: "+ (int)rand);
+		
 		if (paymentChoice == 1) {
 		
 			for (int i = 0; i < toyCart.size(); i++) {
