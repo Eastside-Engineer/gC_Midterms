@@ -2,10 +2,10 @@ Major League Baseball Featuring Ken Griffey Jr.,79.99,N64,An arcade-style baseba
 Pokémon Snap,64.99,N64,A Pokémon photographer is summoned by Professor Oak to Pokémon Island a place with a variety of climatic and geographic regions.
 Super Mario 64,64.99,N64,Collect stars and rescue Peach (again?) in an all-new 3D environment. 
 Mario Kart 64,79.99,N64,If you fall off of Rainbow Road just right I mean perfectly you can easily beat anyone.  
-Bazooka,49.88,NERF,des5
-Crossbow,39.97,NERF,des6
-Sniper,34.88,NERF,des7
-Pistol,18.98,NERF,des8
+Doomlands Bazooka,49.88,NERF,When the little darts just don't cut it.
+Modulus Regulator Blaster,39.97,NERF,Destroy your friends and let none survive with 100 rounds of pure NERF love.
+Rebelle Focusfire Crossbow,34.88,NERF,Built with medieval design and deployed with modern fashion.
+N-Strike Blaster,18.98,NERF,Strike down all who oppose you with the ultimate six shooter!
 GameBoy,89.99,GB, The Nintendo Game Boy was released in 1989. It was a handheld video game console that let's user "Game & Watch."
 GameBoy Color,69.99,GB, The Nintendo Game Boy Color was released in 1998. It is a colorized version of the handheld original classic Gameboy!
 GameBoy Advance,99.99,GB,The Nintendo Game Boy Advance was released in 2001. It provides the user with a larger screen and more pixels.
