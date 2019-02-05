@@ -5,6 +5,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
 
@@ -25,7 +26,7 @@ public class POSApp {
 		String checkNumber = "0";
 		String creditCardNumber = "0";
 		String creditCardCVV = "0";
-		String creditCardExp = "0";
+		Date creditCardExp = null;
 		List<String> toyCart = new ArrayList<String>();
 		List<Double> toyCartPrice = new ArrayList<Double>();
 		List<Double> toyCartNum = new ArrayList<Double>();
@@ -104,13 +105,17 @@ public class POSApp {
 
 		} else if (paymentChoice == 3) {
 //We wanted to make sure we could validate all major credit cards.
-			creditCardNumber = ProductUtil.getCreditCard(scnr, "Please enter your credit card number without dashes or spaces: ",
+			creditCardNumber = ProductUtil.getCreditCard(scnr,
+					"Please enter your credit card number without dashes or spaces: ",
 					"^(?:(?<visa>4[0-9]{12}(?:[0-9]{3})?)|" + "(?<mastercard>5[1-5][0-9]{14})|"
 							+ "(?<discover>6(?:011|5[0-9]{2})[0-9]{12})|" + "(?<amex>3[47][0-9]{13}))$");
-			creditCardCVV = ProductUtil.getCreditCard(scnr, "Please enter 3-digit security code on the back of your card: ", "(^[0-9]{3,4})$");
-			creditCardExp = ProductUtil.getDate(scnr, "Please enter your expiration date: (mm/yyyy) ", "([1-9]|0[1-9]|1[012])/([0-9][0-9])");
-			
-			//System.out.println(creditCardNumber);
+
+			creditCardCVV = ProductUtil.getCreditCard(scnr,
+					"Please enter 3-digit security code on the back of your card: ", "(^[0-9]{3,4})$");
+
+			creditCardExp = ProductUtil.getCreditCardEXP(scnr, "Please enter a date in the format (MM/YYYY): ");
+
+			// System.out.println(creditCardNumber);
 		}
 		System.out.println("Here's your itemized receipt: ");
 		if (paymentChoice == 1) {
@@ -131,7 +136,6 @@ public class POSApp {
 			}
 			System.out.println("Thank you for your credit card payment ending in: " + creditCardNumber.substring(12));
 		}
-
 
 		System.out.println("\nYour grand total is: " + (grandTotal = subTotal * salesTax));
 

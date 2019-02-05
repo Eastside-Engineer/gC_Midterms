@@ -192,22 +192,32 @@ public class ProductUtil {
 		} while (!isValid);
 		return input;
 }
-	public static String getCreditCardExp(Scanner scnr, String prompt, String regex) {
+	public static Date getCreditCardEXP(Scanner scnr, String prompt) {
+		SimpleDateFormat format = new SimpleDateFormat("DD/yyyy");
+		format.setLenient(false); // <-- date format must match
 		boolean isValid = false;
+		Date date = null;
 		String input;
 		do {
+			// Step 1: get the raw string
 			input = Validator.getString(scnr, prompt);
-
-			if (input.matches(regex)) {
+			// Step 2: convert it to a date
+			try {
+				// format.parse throws a ParseException, which is a checked exception and MUST
+				// be caught.
+				date = format.parse(input);
+				// If exception doesn't occur, it's valid.
 				isValid = true;
-			} else {
-				System.err.println("Input must match the appropriate format.");
+			} catch (ParseException ex) {
+				// If exception occurs, it's invalid.
 				isValid = false;
+				System.out.println("Enter a valid date in format mm/dd/yyyy.");
 			}
 
 		} while (!isValid);
-		return input;
-}
+		return date;
+	}
+	
 	public static String getCreditCardCVV(Scanner scnr, String prompt, String regex) {
 		boolean isValid = false;
 		String input;

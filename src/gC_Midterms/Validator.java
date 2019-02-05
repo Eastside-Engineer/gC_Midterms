@@ -125,7 +125,7 @@ public class Validator {
 	 * Get a date from user input in the format mm/dd/yyyy
 	 */
 	public static Date getDate(Scanner scnr, String prompt) {
-		SimpleDateFormat format = new SimpleDateFormat("MM/dd/yyyy");
+		SimpleDateFormat format = new SimpleDateFormat("DD/yyyy");
 		format.setLenient(false); // <-- date format must match
 		boolean isValid = false;
 		Date date = null;
