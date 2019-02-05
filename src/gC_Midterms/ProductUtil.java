@@ -142,6 +142,68 @@ public class ProductUtil {
 
 		return change;
 	}
+	
+	public static int getCheck(Scanner scnr, String prompt) {
+		// This approach uses exception handling.
+		System.out.print(prompt);
+		try {
+			int checkNum = scnr.nextInt();
+			scnr.nextLine();
+			return checkNum;
+		} catch (InputMismatchException e) {
+			System.out.println("You must enter a check number.");
+			scnr.nextLine();
+			return getCheck(scnr, prompt);
+		}
+	}
+	public static String getCreditCard(Scanner scnr, String prompt, String regex) {
+		boolean isValid = false;
+		String input;
+		do {
+			input = Validator.getString(scnr, prompt);
+
+			if (input.matches(regex)) {
+				isValid = true;
+			} else {
+				System.out.println("Input must match the appropriate format.");
+				isValid = false;
+			}
+
+		} while (!isValid);
+		return input;
+}
+	public static String getCreditCardExp(Scanner scnr, String prompt, String regex) {
+		boolean isValid = false;
+		String input;
+		do {
+			input = Validator.getString(scnr, prompt);
+
+			if (input.matches(regex)) {
+				isValid = true;
+			} else {
+				System.out.println("Input must match the appropriate format.");
+				isValid = false;
+			}
+
+		} while (!isValid);
+		return input;
+}
+	public static String getCreditCardCVV(Scanner scnr, String prompt, String regex) {
+		boolean isValid = false;
+		String input;
+		do {
+			input = Validator.getString(scnr, prompt);
+
+			if (input.matches(regex)) {
+				isValid = true;
+			} else {
+				System.out.println("Input must match the appropriate format.");
+				isValid = false;
+			}
+
+		} while (!isValid);
+		return input;
+}
 }
 
 //Change Log:

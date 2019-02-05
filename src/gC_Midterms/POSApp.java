@@ -78,8 +78,10 @@ public class POSApp {
 			}
 
 		}
-
+//This should only display when there are no items in the cart and user exits.
 		System.out.println("Thanks for shopping with us at Toys 'R' Us!");
+		
+		
 		System.out.println("\n");
 //This is where we ask for payment type.
 		System.out.println("How would you like to pay? ");
@@ -94,9 +96,15 @@ public class POSApp {
 			
 
 		} else if (paymentChoice == 2) {
-			// Check validation
+			int checkNumber = ProductUtil.getCheck(scnr, "Please enter your Check number: ");
+			System.out.println("Thank you.");
 		} else if (paymentChoice == 3) {
-			// Credit Card Validation
+//We wanted to make sure we could validate all major credit cards.			
+			String creditCardNumber = ProductUtil.getCreditCard(scnr, "Please enter your credit card number: ", "^(?:(?<visa>4[0-9]{12}(?:[0-9]{3})?)|" +
+			        "(?<mastercard>5[1-5][0-9]{14})|" +
+			        "(?<discover>6(?:011|5[0-9]{2})[0-9]{12})|" +
+			        "(?<amex>3[47][0-9]{13}))$");
+			System.out.println(creditCardNumber);
 		}
 
 		//System.out.print("Your grand total is: $");
