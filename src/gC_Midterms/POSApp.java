@@ -91,7 +91,7 @@ do {
 
 		System.out.println("\n");
 //This is where we ask for payment type.
-	if(toyList.size() == 0) {
+	if(toyCart.size() > 0) {
 		System.out.println("How would you like to pay? ");
 		double theSalesTax = subTotal*salesTax;
 		grandTotal = subTotal * salesTaxMultiplier;
