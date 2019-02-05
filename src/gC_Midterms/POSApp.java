@@ -157,11 +157,12 @@ do {
 		}
 		
 		String newOrder = ProductUtil.getUserCont(scnr, "Would you like to place a new order?", "[yYnN]");
-		if (newOrder.equalsIgnoreCase("y")) {
+		if (newOrder.equalsIgnoreCase("n")) {
 			fullLoop = false;
 			break;
 		}else {
 			fullLoop = true;
+			break;
 		}
 			
 			
