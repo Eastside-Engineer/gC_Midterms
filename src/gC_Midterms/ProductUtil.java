@@ -25,7 +25,7 @@ public class ProductUtil {
 // cycle through products and print them on lines
 		List<String> toyInventory = Files.readAllLines(filePath);
 		List<Toy> toyList = readFile();
-		System.out.println("=NUMBER ==== CATEGORY ==== NAME ==== PRICE ==== DESCRIPTION");
+		System.out.println("= NUMBER ==== CATEGORY ==== NAME ==== PRICE ==== DESCRIPTION");
 		for (int i = 0; i < toyList.size(); i++) {
 // header for inventory print out 
 			

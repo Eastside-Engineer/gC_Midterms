@@ -110,12 +110,17 @@ public class POSApp {
 					"^(?:(?<visa>4[0-9]{12}(?:[0-9]{3})?)|" + "(?<mastercard>5[1-5][0-9]{14})|"
 							+ "(?<discover>6(?:011|5[0-9]{2})[0-9]{12})|" + "(?<amex>3[47][0-9]{13}))$");
 
-			creditCardCVV = ProductUtil.getCreditCard(scnr,
-					"Please enter 3-digit security code on the back of your card: ", "(^[0-9]{3,4})$");
 
-			creditCardExp = ProductUtil.getCreditCardEXP(scnr, "Please enter a date in the format (MM/YYYY): ");
+			
+			creditCardExp = ProductUtil.getCreditCardEXP(scnr, "Please enter an expiration date in the format (MM/YYYY): ");
 
 			// System.out.println(creditCardNumber);
+
+			creditCardCVV = ProductUtil.getCreditCard(scnr, "Please enter 3-digit security code on the back of your card: ", "(^[0-9]{3,4})$");
+
+			
+			//System.out.println(creditCardNumber);
+
 		}
 		System.out.println("Here's your itemized receipt: ");
 		if (paymentChoice == 1) {
