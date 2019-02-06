@@ -334,7 +334,7 @@ System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 		System.out.println("@/////#(/////////////(@@&%@@@@@@@@@@@@@														");
 		System.out.println("@@((////////(%/////@@@@@@@@@@@@@@@@@@@@		   Toys R' Us INVOICE # "+ (int) rand+"         ");
 		System.out.println("@@@@@@@&@@#/(//(@@(/@@@@@@@@@@@@@@@@@@@														");
-		System.out.println("@@@@@@@@@@@@@@@@@@@@@@@&@@@@@@@@@@@@@@@		    	STORE # 3945 Detroit,MICHIGAN"+"        ");
+		System.out.println("@@@@@@@@@@@@@@@@@@@@@@@&@@@@@@@@@@@@@@@		        STORE # 3945 Detroit,MICHIGAN"+"        ");
 		System.out.println("@@@@@@@@@@@@@@@@@@@/////@@@@@@@@@@@@@@@														");
 		System.out.println("@@@@@@@@@@@@@@@@@@@@////@@@@@@@@@@@@@@@														");
 		System.out.println("@@@@@@@@@@@@@@@@@@@(///%&@@@@@@@@@@@@@@														");
