@@ -15,10 +15,10 @@ import java.util.Scanner;
 
 public class ProductUtil {
 
-	// get the file path so we can read it in the getPrompt method
+// get the file path so we can read it in the getPrompt method
 	private static Path filePath = Paths.get("inventory.txt");
 
-	// private or protected????
+
 	protected static void getPrompt() throws IOException {
 
 		System.out.println("\t\t   Welcome to Toys R' Us. The most profitable, long lasting Toy store in the world.\n");
@@ -44,7 +44,7 @@ public class ProductUtil {
 // creating a list of toys objects called "toyInventory" and setting it equal to an array list separated by commas.
 	public static List<Toy> readFile() throws IOException {
 
-		// pass the product class
+
 
 		List<String> toyInventory = Files.readAllLines(filePath);
 
@@ -68,7 +68,7 @@ public class ProductUtil {
 	}
 
 	public static int getProductNum(Scanner scnr, String prompt) {
-		// This approach uses exception handling.
+// This approach uses exception handling.
 		System.out.print(prompt);
 		try {
 			int num = scnr.nextInt();
@@ -140,7 +140,7 @@ public class ProductUtil {
 
 	public static Double getChange(double tendered, double grandTotal) {
 
-		// subtracts cash tendered (SCNR) from grand TOtal
+// subtracts cash tendered (SCNR) from grand TOtal
 
 		double change = tendered - grandTotal;
 
@@ -200,17 +200,17 @@ public class ProductUtil {
 		Date date = null;
 		String input;
 		do {
-			// Step 1: get the raw string
+// Step 1: get the raw string
 			input = Validator.getString(scnr, prompt);
-			// Step 2: convert it to a date
+// Step 2: convert it to a date
 			try {
-				// format.parse throws a ParseException, which is a checked exception and MUST
-				// be caught.
+// format.parse throws a ParseException, which is a checked exception and MUST
+// be caught.
 				date = format.parse(input);
-				// If exception doesn't occur, it's valid.
+// If exception doesn't occur, it's valid.
 				isValid = true;
 			} catch (ParseException ex) {
-				// If exception occurs, it's invalid.
+// If exception occurs, it's invalid.
 				isValid = false;
 				System.out.println("Enter a valid date in format MM/YYYY.");
 			}
@@ -327,7 +327,7 @@ System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 		System.out.println("@/////(@@/@// *@@//////#@@@@//////@@@@@  ██║██║ ╚████║ ╚████╔╝ ╚██████╔╝██║╚██████╗███████╗ ");    
 		System.out.println("%///////(%&//,##(///////(/#@@@@@@@@@@@@  ╚═╝╚═╝  ╚═══╝  ╚═══╝   ╚═════╝ ╚═╝ ╚═════╝╚══════╝	");
 		System.out.println("@/////#(/////////////(@@&%@@@@@@@@@@@@@														");
-		System.out.println("@@((////////(%/////@@@@@@@@@@@@@@@@@@@@		   Toys R' Us INVOICE: \"" + (int) rand+"       ");
+		System.out.println("@@((////////(%/////@@@@@@@@@@@@@@@@@@@@		   Toys R' Us INVOICE #"+ (int) rand+"          ");
 		System.out.println("@@@@@@@&@@#/(//(@@(/@@@@@@@@@@@@@@@@@@@														");
 		System.out.println("@@@@@@@@@@@@@@@@@@@@@@@&@@@@@@@@@@@@@@@		    	STORE # 3945 Detroit,MICHIGAN"+"        ");
 		System.out.println("@@@@@@@@@@@@@@@@@@@/////@@@@@@@@@@@@@@@														");
@@ -335,12 +335,9 @@ System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 		System.out.println("@@@@@@@@@@@@@@@@@@@(///%&@@@@@@@@@@@@@@														");
 		System.out.println("@@@@@@@@@@@@@@@@/////@@@@@@@@@@@@@@@@@@														");
 		System.out.println("");
-		System.out.println("Quantity ==== Unit Price ============ Name =================================================");
+		System.out.println("Quantity ==== Unit Price ======= Name ======================================================");
   	}
 
 }
 
-//Change Log:
-//13:54 PM 2/2/2019 - Removed ProductUtil "extends Product"
-//This file just contains methods we will call in the main. This
-//is not an extension of the product class.
+
