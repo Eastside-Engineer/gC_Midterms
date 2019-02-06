@@ -147,6 +147,8 @@ public class POSApp {
 						System.out.printf("%-8s", toyCart.get(i));
 
 					}
+					System.out.println();
+					System.out.println();
 					System.out.print("\nYour change is: ");
 					System.out.printf("$%-9.2f", ProductUtil.getChange(tendered, grandTotal));
 					System.out.println();
@@ -154,15 +156,17 @@ public class POSApp {
 				}
 				if (paymentChoice == 2) {
 					for (int i = 0; i < toyCart.size(); i++) {
-						System.out.println(
-								toyCartNum.get(i).intValue() + " " + toyCart.get(i) + " $" + toyCartPrice.get(i));
+						System.out.printf("%-12s", toyCartNum.get(i).intValue());
+						System.out.printf("%-20s", " $" + (toyCartPrice.get(i)));
+						System.out.printf("%-8s", toyCart.get(i));
 					}
 					System.out.println("\nThank you for your check number: #" + checkNumber);
 				}
 				if (paymentChoice == 3) {
 					for (int i = 0; i < toyCart.size(); i++) {
-						System.out.println(
-								toyCartNum.get(i).intValue() + " " + toyCart.get(i) + " $" + toyCartPrice.get(i));
+						System.out.printf("%-12s", toyCartNum.get(i).intValue());
+						System.out.printf("%-20s", " $" + (toyCartPrice.get(i)));
+						System.out.printf("%-8s", toyCart.get(i));
 					}
 					System.out.println(
 							"\nThank you for your credit card payment ending in: " + creditCardNumber.substring(12));
