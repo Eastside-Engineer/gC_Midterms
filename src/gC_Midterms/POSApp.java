@@ -121,8 +121,8 @@ public class POSApp {
 
 				} else if (paymentChoice == 2) {
 					checkNumber = ProductUtil.getCheck(scnr, "\nPlease enter your Check number: ", 1, 9999);
-					System.out.println("\nThank you.");
-					System.out.println(checkNumber);
+					System.out.println("\nThank you, valued customer.");
+				//	System.out.println(checkNumber);
 
 				} else if (paymentChoice == 3) {
 //We wanted to make sure we could validate all major credit cards.
@@ -181,7 +181,7 @@ public class POSApp {
 					}
 					System.out.println("============================================================================================");
 					System.out.println(
-							"Credit card ending in  -" + creditCardNumber.substring(12) + " has been approved. ");
+							"Credit card ending in  ************" + creditCardNumber.substring(12) + " has been approved. ");
 					System.out.println("============================================================================================");
 				}
 
