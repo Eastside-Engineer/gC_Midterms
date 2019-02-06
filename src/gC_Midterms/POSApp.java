@@ -188,7 +188,7 @@ public class POSApp {
 			} else {
 				run = true;
 			}
-
+			System.out.println();
 			String newOrder = ProductUtil.getUserCont(scnr, "Would you like to place a new order? (y/n)", "[yYnN]");
 			if (newOrder.equalsIgnoreCase("n")) {
 				fullLoop = false;
