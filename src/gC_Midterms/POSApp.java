@@ -139,11 +139,11 @@ public class POSApp {
 
 				}
 				ProductUtil.getInvoiceHeader();
-
+// cash payment 
 				if (paymentChoice == 1) {
 
 					for (int i = 0; i < toyCart.size(); i++) {
-						System.out.printf("%-12s", toyCartNum.get(i).intValue());
+						System.out.printf("%-20s","    "+ toyCartNum.get(i).intValue());
 						System.out.printf("%-20s", " $" + (toyCartPrice.get(i)));
 						System.out.printf("%-8s", toyCart.get(i));
 						System.out.println("\n");
@@ -151,31 +151,38 @@ public class POSApp {
 					}
 					System.out.println();
 					DecimalFormat decim = new DecimalFormat("0.00");
+					System.out.println("============================================================================================");
 					System.out.println("Cash tendered: $" + decim.format(tendered));
-					System.out.print("\nChange Given: ");
+					System.out.print("Change Given: ");
 					System.out.printf("$%-9.2f", ProductUtil.getChange(tendered, grandTotal));
+					System.out.println("\n============================================================================================");
 					System.out.println();
-
+// check payment
 				}
 				if (paymentChoice == 2) {
 					for (int i = 0; i < toyCart.size(); i++) {
-						System.out.printf("%-12s", toyCartNum.get(i).intValue());
+						System.out.printf("%-20s","    "+ toyCartNum.get(i).intValue());
 						System.out.printf("%-20s", " $" + (toyCartPrice.get(i)));
 						System.out.printf("%-8s", toyCart.get(i)); 
 						System.out.println("\n");
 				
 					}
-					System.out.println("\nCheck Number " + checkNumber + " has been recorded.");
+					System.out.println("============================================================================================");
+					System.out.println("Check Number " + checkNumber + " has been recorded.");
+					System.out.println("============================================================================================");
 				}
+// credit card payment 				
 				if (paymentChoice == 3) {
 					for (int i = 0; i < toyCart.size(); i++) {
-						System.out.printf("%-12s", toyCartNum.get(i).intValue());
+						System.out.printf("%-20s","    "+ toyCartNum.get(i).intValue());
 						System.out.printf("%-20s", " $" + (toyCartPrice.get(i)));
 						System.out.printf("%-8s", toyCart.get(i));
 						System.out.println("\n");
 					}
+					System.out.println("============================================================================================");
 					System.out.println(
-							"\nCredit card ending in  -" + creditCardNumber.substring(12) + " has been approved. ");
+							"Credit card ending in  -" + creditCardNumber.substring(12) + " has been approved. ");
+					System.out.println("============================================================================================");
 				}
 
 			} else {

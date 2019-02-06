@@ -25,8 +25,13 @@ public class ProductUtil {
 // cycle through products and print them on lines
 		List<String> toyInventory = Files.readAllLines(filePath);
 		List<Toy> toyList = readFile();
-		System.out.println(
-				"# === Category === Price ============ Name ================ Description =============================================== ");
+		System.out.println("=======================================================================================================================");
+		System.out.printf("%-6s", "#"); 
+		System.out.printf("%-12s", "Category");
+		System.out.printf("%-20s", "Price");
+		System.out.printf("%-34s", "Name");
+		System.out.printf("%-50s", "Description");
+		System.out.println("\n=======================================================================================================================");
 		for (int i = 0; i < toyList.size(); i++) {
 // header for inventory print out 
 
@@ -185,7 +190,7 @@ public class ProductUtil {
 			if (input.matches(regex)) {
 				isValid = true;
 			} else {
-				System.err.println("Input must match the appropriate format.");
+				System.err.println("Please enter Credit Card number and CVV numbers without dashes or spaces. ");
 				isValid = false;
 			}
 
@@ -327,15 +332,19 @@ System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 		System.out.println("@/////(@@/@// *@@//////#@@@@//////@@@@@  ██║██║ ╚████║ ╚████╔╝ ╚██████╔╝██║╚██████╗███████╗ ");    
 		System.out.println("%///////(%&//,##(///////(/#@@@@@@@@@@@@  ╚═╝╚═╝  ╚═══╝  ╚═══╝   ╚═════╝ ╚═╝ ╚═════╝╚══════╝	");
 		System.out.println("@/////#(/////////////(@@&%@@@@@@@@@@@@@														");
-		System.out.println("@@((////////(%/////@@@@@@@@@@@@@@@@@@@@		   Toys R' Us INVOICE #"+ (int) rand+"          ");
+		System.out.println("@@((////////(%/////@@@@@@@@@@@@@@@@@@@@		   Toys R' Us INVOICE # "+ (int) rand+"         ");
 		System.out.println("@@@@@@@&@@#/(//(@@(/@@@@@@@@@@@@@@@@@@@														");
 		System.out.println("@@@@@@@@@@@@@@@@@@@@@@@&@@@@@@@@@@@@@@@		    	STORE # 3945 Detroit,MICHIGAN"+"        ");
 		System.out.println("@@@@@@@@@@@@@@@@@@@/////@@@@@@@@@@@@@@@														");
 		System.out.println("@@@@@@@@@@@@@@@@@@@@////@@@@@@@@@@@@@@@														");
 		System.out.println("@@@@@@@@@@@@@@@@@@@(///%&@@@@@@@@@@@@@@														");
 		System.out.println("@@@@@@@@@@@@@@@@/////@@@@@@@@@@@@@@@@@@														");
-		System.out.println("");
-		System.out.println("Quantity === Unit Price ============== Name ================================================");
+		System.out.println("============================================================================================");
+		System.out.printf("%-20s", " Qty.");
+		System.out.printf("%-20s", "Unit Price");
+		System.out.printf("%13s", "Name");
+		System.out.println("\n============================================================================================");
+		//System.out.println("== Qty.======== Unit Price ================= Name ==========================================");
   	}
 
 }
